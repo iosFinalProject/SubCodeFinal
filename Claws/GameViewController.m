@@ -8,19 +8,62 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+#import <SpriteKit/SpriteKit.h>
+#import "currentStateGameData.h"
+
+
+
 
 @implementation GameViewController
+@synthesize myMutableArray;
+@synthesize displayScore;
+
+NSMutableArray *globalStringArray;
+
+int showDisplayScore;
+
+
+NSMutableArray *getMyMutableArray(){
+    return globalStringArray;
+    
+}
+
+int getDisplayScore(){
+    
+    return highScore1;
+}
+
 
 - (void)viewDidLoad
 {
+    /*myMutableArray = [[NSMutableArray alloc]init];
+    [myMutableArray addObject: @"abc"];
+    [myMutableArray addObject: @"def"];
+    [myMutableArray addObject: @"ghi"];
+    globalStringArray = [[NSMutableArray alloc]initWithArray: myMutableArray copyItems:YES];*/
+    //showDisplayScore = displayScore;
+    
     [super viewDidLoad];
+    
+    
+    
+    
+
+    
 
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
+    SKView * skView;
+    skView  = (SKView *)self.view;
+     skView.showsFPS = YES;
+    /////////////// ADDED NEXT FEW LINES
+       
+    skView.allowsTransparency = YES; /////// ADDED THIS
     skView.showsNodeCount = YES;
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = YES;
+    skView.layer.zPosition = 2;
+    
+    //[self.view addSubview: skView];
     
     // Create and configure the scene.
     GameScene *scene = [GameScene nodeWithFileNamed:@"GameScene"];

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97282CB21CCD750E00DC1CEC /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97282CB11CCD750E00DC1CEC /* StartViewController.m */; };
+		97282CB51CCDA23700DC1CEC /* currentStateGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 97282CB41CCDA23700DC1CEC /* currentStateGameData.m */; };
 		972FE3AF1CC98DD0004ED064 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3AE1CC98DD0004ED064 /* main.m */; };
 		972FE3B21CC98DD0004ED064 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3B11CC98DD0004ED064 /* AppDelegate.m */; };
 		972FE3B51CC98DD0004ED064 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3B41CC98DD0004ED064 /* GameScene.m */; };
@@ -17,6 +19,11 @@
 		972FE3C21CC98DD0004ED064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972FE3C01CC98DD0004ED064 /* LaunchScreen.storyboard */; };
 		972FE3CD1CC98DD0004ED064 /* ClawsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3CC1CC98DD0004ED064 /* ClawsTests.m */; };
 		972FE3D81CC98DD0004ED064 /* ClawsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3D71CC98DD0004ED064 /* ClawsUITests.m */; };
+		972FE3E91CC99261004ED064 /* Cats.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3E81CC99261004ED064 /* Cats.m */; };
+		972FE3EC1CC99345004ED064 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3EB1CC99345004ED064 /* Food.m */; };
+		972FE3EF1CC993D2004ED064 /* DecorativeItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3EE1CC993D2004ED064 /* DecorativeItems.m */; };
+		972FE3F21CC99F64004ED064 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3F11CC99F64004ED064 /* Test.m */; };
+		972FE3F71CCC1893004ED064 /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3F61CCC1893004ED064 /* GameData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		97282CB01CCD750E00DC1CEC /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		97282CB11CCD750E00DC1CEC /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		97282CB31CCDA23700DC1CEC /* currentStateGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = currentStateGameData.h; sourceTree = "<group>"; };
+		97282CB41CCDA23700DC1CEC /* currentStateGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = currentStateGameData.m; sourceTree = "<group>"; };
 		972FE3AA1CC98DCF004ED064 /* Claws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Claws.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		972FE3AE1CC98DD0004ED064 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		972FE3B01CC98DD0004ED064 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,6 +67,16 @@
 		972FE3D31CC98DD0004ED064 /* ClawsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClawsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		972FE3D71CC98DD0004ED064 /* ClawsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClawsUITests.m; sourceTree = "<group>"; };
 		972FE3D91CC98DD0004ED064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		972FE3E71CC99261004ED064 /* Cats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cats.h; sourceTree = "<group>"; };
+		972FE3E81CC99261004ED064 /* Cats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cats.m; sourceTree = "<group>"; };
+		972FE3EA1CC99345004ED064 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		972FE3EB1CC99345004ED064 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
+		972FE3ED1CC993D2004ED064 /* DecorativeItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecorativeItems.h; sourceTree = "<group>"; };
+		972FE3EE1CC993D2004ED064 /* DecorativeItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecorativeItems.m; sourceTree = "<group>"; };
+		972FE3F01CC99F64004ED064 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		972FE3F11CC99F64004ED064 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		972FE3F51CCC1893004ED064 /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
+		972FE3F61CCC1893004ED064 /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +132,24 @@
 				972FE3B31CC98DD0004ED064 /* GameScene.h */,
 				972FE3B41CC98DD0004ED064 /* GameScene.m */,
 				972FE3B61CC98DD0004ED064 /* GameScene.sks */,
+				972FE3F51CCC1893004ED064 /* GameData.h */,
+				972FE3F61CCC1893004ED064 /* GameData.m */,
+				972FE3E71CC99261004ED064 /* Cats.h */,
+				972FE3E81CC99261004ED064 /* Cats.m */,
+				97282CB31CCDA23700DC1CEC /* currentStateGameData.h */,
+				97282CB41CCDA23700DC1CEC /* currentStateGameData.m */,
 				972FE3B81CC98DD0004ED064 /* GameViewController.h */,
 				972FE3B91CC98DD0004ED064 /* GameViewController.m */,
+				97282CB01CCD750E00DC1CEC /* StartViewController.h */,
+				97282CB11CCD750E00DC1CEC /* StartViewController.m */,
+				972FE3F01CC99F64004ED064 /* Test.h */,
+				972FE3F11CC99F64004ED064 /* Test.m */,
 				972FE3BB1CC98DD0004ED064 /* Main.storyboard */,
 				972FE3BE1CC98DD0004ED064 /* Assets.xcassets */,
+				972FE3EA1CC99345004ED064 /* Food.h */,
+				972FE3EB1CC99345004ED064 /* Food.m */,
+				972FE3ED1CC993D2004ED064 /* DecorativeItems.h */,
+				972FE3EE1CC993D2004ED064 /* DecorativeItems.m */,
 				972FE3C01CC98DD0004ED064 /* LaunchScreen.storyboard */,
 				972FE3C31CC98DD0004ED064 /* Info.plist */,
 				972FE3AD1CC98DCF004ED064 /* Supporting Files */,
@@ -279,10 +314,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				972FE3F71CCC1893004ED064 /* GameData.m in Sources */,
+				97282CB51CCDA23700DC1CEC /* currentStateGameData.m in Sources */,
 				972FE3BA1CC98DD0004ED064 /* GameViewController.m in Sources */,
+				972FE3F21CC99F64004ED064 /* Test.m in Sources */,
 				972FE3B21CC98DD0004ED064 /* AppDelegate.m in Sources */,
 				972FE3B51CC98DD0004ED064 /* GameScene.m in Sources */,
+				972FE3EF1CC993D2004ED064 /* DecorativeItems.m in Sources */,
+				972FE3EC1CC99345004ED064 /* Food.m in Sources */,
+				97282CB21CCD750E00DC1CEC /* StartViewController.m in Sources */,
 				972FE3AF1CC98DD0004ED064 /* main.m in Sources */,
+				972FE3E91CC99261004ED064 /* Cats.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +550,7 @@
 				972FE3DE1CC98DD0004ED064 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		972FE3DF1CC98DD0004ED064 /* Build configuration list for PBXNativeTarget "ClawsTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +559,7 @@
 				972FE3E11CC98DD0004ED064 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		972FE3E21CC98DD0004ED064 /* Build configuration list for PBXNativeTarget "ClawsUITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +568,7 @@
 				972FE3E41CC98DD0004ED064 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
