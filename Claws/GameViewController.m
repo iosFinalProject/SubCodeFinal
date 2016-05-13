@@ -2,7 +2,7 @@
 //  GameViewController.m
 //  Claws
 //
-//  Created by Libby Goss on 4/21/16.
+//  Created by Meet Mehta on 4/21/16.
 //  Copyright (c) 2016 nyu.edu. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 #import "currentStateGameData.h"
 
 
-
+// pretty much all created for us
 
 @implementation GameViewController
 @synthesize myMutableArray;
@@ -36,12 +36,7 @@ int getDisplayScore(){
 
 - (void)viewDidLoad
 {
-    /*myMutableArray = [[NSMutableArray alloc]init];
-    [myMutableArray addObject: @"abc"];
-    [myMutableArray addObject: @"def"];
-    [myMutableArray addObject: @"ghi"];
-    globalStringArray = [[NSMutableArray alloc]initWithArray: myMutableArray copyItems:YES];*/
-    //showDisplayScore = displayScore;
+
     
     [super viewDidLoad];
     
@@ -55,15 +50,11 @@ int getDisplayScore(){
     SKView * skView;
     skView  = (SKView *)self.view;
      skView.showsFPS = YES;
-    /////////////// ADDED NEXT FEW LINES
-       
-    skView.allowsTransparency = YES; /////// ADDED THIS
+    skView.allowsTransparency = YES;
     skView.showsNodeCount = YES;
-    /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = YES;
     skView.layer.zPosition = 2;
     
-    //[self.view addSubview: skView];
     
     // Create and configure the scene.
     GameScene *scene = [GameScene nodeWithFileNamed:@"GameScene"];

@@ -2,7 +2,7 @@
 //  StartViewController.m
 //  Claws
 //
-//  Created by Libby Goss on 4/24/16.
+//  Created by Meet Mehta on 4/24/16.
 //  Copyright © 2016 nyu.edu. All rights reserved.
 //
 
@@ -24,26 +24,14 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     
-    
-    [[GameData sharedGameData].ItemsAndPosOnScreen removeObjectForKey:@"Sunning Rocks"];
-    [currItemsAndPosOnScreen removeObjectForKey:@"Sunning Rocks"];
-    DecorativeItems *graniteBlock = [[GameData sharedGameData].allItemsInGame objectForKey:@"Sunning Rocks"];
-    graniteBlock.isOnScreen = NO;
-    graniteBlock.isBeingUsed = NO;
-    graniteBlock.itemPosition = @0;
-    
-    
-    
-
-    
-    ///// Recomment in cats and items
-    
-
+// intialize master cat dictionary if it hasn't been created yet (it will be created during your first run of the game)
+    // you also start out with an initial 100 prey points
     if (!([GameData sharedGameData].allCatsInGame)){
         
         [GameData sharedGameData].allCatsInGame = [[NSMutableDictionary alloc] init];
         [GameData sharedGameData].preyPoints = 100;
         
+        // each cat has a name, loyalty counter, loyalty threshold (to be in your clan [for future implementation]), max loyalty, specific food and items it needs to be on the screen (for future), inClan boolean, onScreen boolean, and its picture...each cat also has an associated item variable (initalized at the very bottom of this block)
         Cats *Birch = [[Cats alloc] init];
         Birch.name = @"Birch";
         Birch.currLoyaltyCounter = 10;
@@ -215,67 +203,18 @@
         for (int tyu = 0; tyu < [allCatNamesPlease count]; tyu ++){
             Cats *revisedCat = [[GameData sharedGameData].allCatsInGame objectForKey:allCatNamesPlease[tyu]];
             revisedCat.associatedItem = @"123456";
-        } // <---------- Comment in if you're getting this from github.
+        }
         
     }
     
-    ////////////////////////////////////////////////////////////////////////////////
     
     
-    /*Cats *Lizard = [[GameData sharedGameData].allCatsInGame objectForKey:@"Lizard"];
-     Lizard.CatPositionPictures = [[NSMutableArray alloc]init];
-     [Lizard.CatPositionPictures addObject:@"lizard-pose-1.png"];
-    
-    Cats *Lily = [[GameData sharedGameData].allCatsInGame objectForKey:@"Lily"];
-    Lily.CatPositionPictures = [[NSMutableArray alloc]init];
-    [Lily.CatPositionPictures addObject:@"lily-pose-1.png"];
-    
-    Cats *Cooper = [[GameData sharedGameData].allCatsInGame objectForKey:@"Cooper"];
-    Cooper.CatPositionPictures = [[NSMutableArray alloc]init];
-    [Cooper.CatPositionPictures addObject:@"cooper-pose-1.png"];
-    
-    Cats *Maple = [[GameData sharedGameData].allCatsInGame objectForKey:@"Maple"];
-    Maple.CatPositionPictures = [[NSMutableArray alloc]init];
-    [Maple.CatPositionPictures addObject:@"maple-pose-1.png"];
-    
-    Cats *Rowan = [[GameData sharedGameData].allCatsInGame objectForKey:@"Rowan"];
-    Rowan.CatPositionPictures = [[NSMutableArray alloc]init];
-    [Rowan.CatPositionPictures addObject:@"rowan-pose-1.png"];
-    
-    Cats *Pebble = [[GameData sharedGameData].allCatsInGame objectForKey:@"Pebble"];
-    Pebble.CatPositionPictures = [[NSMutableArray alloc]init];
-    [Pebble.CatPositionPictures addObject:@"pebble-pose-1.png"];
-    
-    Cats *Sparrow = [[GameData sharedGameData].allCatsInGame objectForKey:@"Sparrow"];
-    Sparrow.CatPositionPictures = [[NSMutableArray alloc]init];
-    [Sparrow.CatPositionPictures addObject:@"sparrow-pose-1.png"];
-    
-    Cats *Tawny = [[GameData sharedGameData].allCatsInGame objectForKey:@"Tawny"];
-    Tawny.CatPositionPictures = [[NSMutableArray alloc]init];
-    [Tawny.CatPositionPictures addObject:@"tawny-pose-1.png"];
-    
-    Cats *Oak = [[GameData sharedGameData].allCatsInGame objectForKey:@"Oak"];
-    Oak.CatPositionPictures = [[NSMutableArray alloc]init];
-    [Oak.CatPositionPictures addObject:@"oak-pose-1.png"];
-    
-    Cats *Cinder = [[GameData sharedGameData].allCatsInGame objectForKey:@"Cinder"];
-    Cinder.CatPositionPictures = [[NSMutableArray alloc]init];
-    [Cinder.CatPositionPictures addObject:@"cinder-pose-1.png"];
-    
-    Cats *Cloud = [[GameData sharedGameData].allCatsInGame objectForKey:@"Cloud"];
-    Cloud.CatPositionPictures = [[NSMutableArray alloc]init];
-    [Cloud.CatPositionPictures addObject:@"cloud-pose-1.png"];
-    
-    Cats *Birch = [[GameData sharedGameData].allCatsInGame objectForKey:@"Birch"];
-    Birch.CatPositionPictures = [[NSMutableArray alloc]init];
-    [Birch.CatPositionPictures addObject:@"birch-pose-1.png"];*/
-    
-    
+    // initialize master items dictionary if it hasn't been created (will run the first time you launch).
     if (!([GameData sharedGameData].allItemsInGame)){
         
         [GameData sharedGameData].allItemsInGame = [[NSMutableDictionary alloc] init];
         
-        
+        // each item has a name, cost, isBeingUsed boolean, isOnScreen boolean, an associated cat variable, the position the cat should be in (future implementation), and the item picture
         DecorativeItems *blackberryBush = [[DecorativeItems alloc]init];
         blackberryBush.itemName = @"Blackberry Bush";
         blackberryBush.cost = 60;
@@ -296,6 +235,7 @@
         pileLeaves.isOnScreen = NO;
         pileLeaves.associatedCat = @"45678";
         pileLeaves.positionOfCat = @"headLeaves";
+        pileLeaves.picture = @"pileLeaves.png"; 
         [[GameData sharedGameData].allItemsInGame setObject:pileLeaves forKey:@"Pile Of Leaves"];
         //////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -331,6 +271,7 @@
         ballMoss.isOnScreen = NO;
         ballMoss.associatedCat = @"45678";
         ballMoss.positionOfCat = @"swatting";
+        ballMoss.picture = @"mossball.png"; 
         [[GameData sharedGameData].allItemsInGame setObject:ballMoss forKey:@"Ball of Moss"];
         //////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -342,6 +283,7 @@
         hawkFeather.isOnScreen = NO;
         hawkFeather.associatedCat = @"45678";
         hawkFeather.positionOfCat = @"rolling";
+        hawkFeather.picture = @"feather.png";
         [[GameData sharedGameData].allItemsInGame setObject:hawkFeather forKey:@"Hawk Feather"];
         //////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -353,6 +295,7 @@
         bigStick.isOnScreen = NO;
         bigStick.associatedCat = @"45678";
         bigStick.positionOfCat = @"rolling";
+        bigStick.picture = @"stick.png"; 
         [[GameData sharedGameData].allItemsInGame setObject:bigStick forKey:@"Big Stick"];
         //////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -364,6 +307,7 @@
         flowers.isOnScreen = NO;
         flowers.associatedCat = @"45678";
         flowers.positionOfCat = @"swatting";
+        flowers.picture = @"flowers_300.png"; 
         [[GameData sharedGameData].allItemsInGame setObject:flowers forKey:@ "Flowers"];
         //////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -375,6 +319,7 @@
         hollowTrunk.isOnScreen = NO;
         hollowTrunk.associatedCat = @"45678";
         hollowTrunk.positionOfCat = @"headHole";
+        hollowTrunk.picture = @"log.png"; 
         [[GameData sharedGameData].allItemsInGame setObject:hollowTrunk forKey:@"Hollow Trunk"];
         //////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -410,6 +355,7 @@
         ribCage.isOnScreen = NO;
         ribCage.associatedCat = @"45678";
         ribCage.positionOfCat = @"laying";
+        ribCage.picture = @"ribcage.png"; 
         [[GameData sharedGameData].allItemsInGame setObject:ribCage forKey:@"Rib Cage"];
         //////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -421,6 +367,7 @@
         mossyNest.isOnScreen = NO;
         mossyNest.associatedCat = @"45678";
         mossyNest.positionOfCat = @"sleeping";
+        mossyNest.picture = @"nest.png"; 
         [[GameData sharedGameData].allItemsInGame setObject:mossyNest forKey:@"Mossy Nest"];
         //////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -432,6 +379,7 @@
         ashTree.isOnScreen = NO;
         ashTree.associatedCat = @"45678";
         ashTree.positionOfCat = @"sitting";
+        ashTree.picture = @"ashtree.png"; 
         [[GameData sharedGameData].allItemsInGame setObject:ashTree forKey:@"Ash Tree"];
         //////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -443,6 +391,7 @@
         femur.isOnScreen = NO;
         femur.associatedCat = @"45678";
         femur.positionOfCat = @"rolling";
+        femur.picture = @"bone"; 
         [[GameData sharedGameData].allItemsInGame setObject:femur forKey: @"Femur"];
         //////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -454,6 +403,7 @@
         scratchingBark.isOnScreen = NO;
         scratchingBark.associatedCat = @"45678";
         scratchingBark.positionOfCat = @"laying";
+        scratchingBark.picture = @"treetrunk.png";
         [[GameData sharedGameData].allItemsInGame setObject:scratchingBark forKey:@"Scratching Bark"];
         //////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -462,147 +412,39 @@
 
     
 
-    /*DecorativeItems *BlackberryBush = [[GameData sharedGameData].allItemsInGame objectForKey:@"Blackberry Bush"];
-    BlackberryBush.isBought = YES;
-    
-    
-    DecorativeItems *BirdSkull= [[GameData sharedGameData].allItemsInGame objectForKey:@"Bird Skull"];
-    BirdSkull.isBought = YES;
-    
-    DecorativeItems *flatRock = [[GameData sharedGameData].allItemsInGame objectForKey:@"Small Flat Rock"];
-    flatRock.isBought = YES;
-    
-    DecorativeItems *treeStump= [[GameData sharedGameData].allItemsInGame objectForKey:@"Tree Stump"];
-    treeStump.isBought = YES;
-    
-    DecorativeItems *sunningRocks5= [[GameData sharedGameData].allItemsInGame objectForKey:@"Sunning Rocks"];
-    sunningRocks5.isBought = YES;*/
-    
-    
-    // THESE TWO ITEMS WILL BE GIVEN TO THE PLAYER AT THE START. THE PLAYER WILL START WITH A 100 PREY POINTS
+    // these two items will be given to the player at the start.
     DecorativeItems *BlackberryBush = [[GameData sharedGameData].allItemsInGame objectForKey:@"Blackberry Bush"];
     BlackberryBush.isBought = YES;
     
-    DecorativeItems *flatRock = [[GameData sharedGameData].allItemsInGame objectForKey:@"Small Flat Rock"];
-    flatRock.isBought = YES;
-    
-    
-
-
+    DecorativeItems *flatRock32 = [[GameData sharedGameData].allItemsInGame objectForKey:@"Small Flat Rock"];
+    flatRock32.isBought = YES;
     
     
     
-    
-    
+    // for debugging purposes
     NSArray *allItemNames = [[GameData sharedGameData].allItemsInGame allKeys];
     NSLog(@"%@", allItemNames);
     
     
-    //ADD INITIAL ITEMS TO GAMEDATA, COPY GAMEDATA TO CURRENT DATA...ALSO HERE
-    //THEN, go to viewdidoad of game scene and ADD ITEMS AND CATS FROM CURRENT DATA.
-    
+    // highschore1  was used as a testing tool
     highScore1 = [GameData sharedGameData].highScore;
-    NSArray *posArray1 = @[@150, @150];
-    //[[GameData sharedGameData].CatsAndPosOnScreen removeAllObjects];
-    
+
+    // if CatsAndPosOnScreen and ItemsAndPos on screen have't been intialized, intialize them.
     if (!([GameData sharedGameData].CatsAndPosOnScreen)){
-        [GameData sharedGameData].CatsAndPosOnScreen = [[NSMutableDictionary alloc]init]; // recomment in
+        [GameData sharedGameData].CatsAndPosOnScreen = [[NSMutableDictionary alloc]init];
     }
     
-    if (!([GameData sharedGameData].ItemsAndPosOnScreen)){
-        [GameData sharedGameData].ItemsAndPosOnScreen = [[NSMutableDictionary alloc]init]; // <---- recomment in
+   if (!([GameData sharedGameData].ItemsAndPosOnScreen)){
+        [GameData sharedGameData].ItemsAndPosOnScreen = [[NSMutableDictionary alloc]init];
 
     }
 
-
-    
-    
-    
-    
-    //[[GameData sharedGameData].CatsAndPosOnScreen setObject:posArray1 forKey:@"MT1"]; //// INITIAL DATA
-    //// ^^ the key will actually be a cat object, not just a string literal of the name...
-    
-    //[[GameData sharedGameData].ItemsAndPosOnScreen setObject: posArray1 forKey:@"CatBed"]; /// INITIAL //// DATA ^^ the key will actually be an item object
-    
-    
-    //Cats *catToAddOnScreen = [[GameData sharedGameData].allCatsInGame objectForKey:@"Lizard"];
-      //<---- LINE WITH TROUBLE. copywithzone
-    
-    // MUY IMPORTANTE BELOWWWWWWWW
-    
-    // ^^ PRevious two lines....instead of actual cat and position, just use the cat's name as key...instead of actual cat object. much simpler
-    //[[GameData sharedGameData].ItemsAndPosOnScreen setObject:@1  forKey:@"Blackberry Bush"];
-    //[[GameData sharedGameData].CatsAndPosOnScreen setObject:@1  forKey:@"Lizard"];
-    
-    
-    
-    
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-   /* DecorativeItems *blackBush = [[GameData sharedGameData].allItemsInGame objectForKey:@"Blackberry Bush"];
-    blackBush.itemPosition = nil;
-    blackBush.associatedCat = @"45678";
-    blackBush.isBeingUsed = NO;
-    blackBush.isOnScreen = NO;
-    //[[GameData sharedGameData].ItemsAndPosOnScreen setObject:blackBush.itemPosition  forKey:@"Blackberry Bush"];
-    Cats *lizard1  = [[GameData sharedGameData].allCatsInGame objectForKey:@"Lizard"];
-    lizard1.associatedItem = @"123456";
-    //[[GameData sharedGameData].CatsAndPosOnScreen setObject:@1 forKey:@"Lizard"];*/
-    
-    
-    /*
-     DecorativeItems *birdSkull4 = [[GameData sharedGameData].allItemsInGame objectForKey:@"Bird Skull"];
-     birdSkull4.itemPosition = @2;
-     birdSkull4.associatedCat = @"Maple";
-     [[GameData sharedGameData].ItemsAndPosOnScreen setObject:birdSkull4.itemPosition  forKey:@"Bird Skull"];
-     Cats * maple1 = [[GameData sharedGameData].allCatsInGame objectForKey:@"Maple"];
-     maple1.associatedItem = @"Bird Skull";
-     [[GameData sharedGameData].CatsAndPosOnScreen setObject:@2 forKey:@"Maple"];
-     
-     */
-    
-    /*DecorativeItems *birdSkull4 = [[GameData sharedGameData].allItemsInGame objectForKey:@"Bird Skull"];
-    birdSkull4.itemPosition = nil;
-    birdSkull4.associatedCat = @"45678";
-    birdSkull4.isBeingUsed = NO;
-    birdSkull4.isOnScreen = NO;
-    //[[GameData sharedGameData].ItemsAndPosOnScreen setObject:birdSkull4.itemPosition  forKey:@"Bird Skull"];
-    Cats * maple1 = [[GameData sharedGameData].allCatsInGame objectForKey:@"Maple"];
-    maple1.associatedItem = @"123456";
-    //[[GameData sharedGameData].CatsAndPosOnScreen setObject:@2 forKey:@"Maple"];*/
-    
-    
-   /*DecorativeItems *treeStump3 = [[GameData sharedGameData].allItemsInGame objectForKey:@"Tree Stump"];
-    treeStump3.itemPosition = nil;
-    treeStump3.associatedCat = @"45678";
-    treeStump3.isBeingUsed = NO;
-    treeStump3.isOnScreen = NO;
-    //[[GameData sharedGameData].ItemsAndPosOnScreen setObject:treeStump3.itemPosition  forKey:@"Tree Stump"];
-    Cats *sparrow1  = [[GameData sharedGameData].allCatsInGame objectForKey:@"Sparrow"];
-    sparrow1.associatedItem = @"123456";
-    //[[GameData sharedGameData].CatsAndPosOnScreen setObject:@3 forKey:@"Sparrow"];
-    
-    
-    DecorativeItems *flatRock2 = [[GameData sharedGameData].allItemsInGame objectForKey:@"Small Flat Rock"];
-    flatRock2.itemPosition = nil;
-    flatRock2.associatedCat = @"45678";
-    flatRock2.isOnScreen = NO;
-    flatRock2.isBeingUsed = NO;
-    //[[GameData sharedGameData].ItemsAndPosOnScreen setObject:flatRock2.itemPosition  forKey:@"Small Flat Rock"];
-    Cats *cinder1  = [[GameData sharedGameData].allCatsInGame objectForKey:@"Cinder"];
-    cinder1.associatedItem = @"123456";
-    //[[GameData sharedGameData].CatsAndPosOnScreen setObject:@4 forKey:@"Cinder"];
-    
-    
-    [[GameData sharedGameData].CatsAndPosOnScreen removeAllObjects];
-    [[GameData sharedGameData].ItemsAndPosOnScreen removeAllObjects];*/
     
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    
-    // VV May Have To Remove The Next Two Things.
+    // copy the data structures to the currCatsAndPosOnScreen so that the cats don't change (leave or come) when you switch views within the same launch <--- the cats and items are loaded in from currCatsAndPosOnScreen and currItemsAndPosOnScreen....during a particular launch, these values do not change and so the items and cats on the screen remain consistent. the CatsAndPosOnScreen and ItemsAndPosOnScreen do change within the same launch...which is why this is needed
     currCatsAndPosOnScreen = [NSMutableDictionary dictionaryWithDictionary:[GameData sharedGameData].CatsAndPosOnScreen];
     
     currItemsAndPosOnScreen = [NSMutableDictionary dictionaryWithDictionary:[GameData sharedGameData].ItemsAndPosOnScreen];
@@ -610,48 +452,37 @@
     food1 = [GameData sharedGameData].isFood;
     
 
-    ////////////////////////// BEGINNING ACTUAL START-UP SCREEN LOGIC
     
-    // FIRST....DETERMINE IF ANY CATS CURRENTLY ON SCREEN NEED TO LEAVE
+    //// This starts the actual start-up screen logic
+    
+    //FIRST....DETERMINE IF ANY CATS CURRENTLY ON SCREEN NEED TO LEAVE
     
     int howManyCatsOnScreen = [currCatsAndPosOnScreen count];
     NSMutableArray *catsCurrentlyOnScreen = [[NSMutableArray alloc]initWithArray: [currCatsAndPosOnScreen allKeys]];
-    // ^^ all the keys (which should be cat objects) are put into the catsCurrentlyOnScreen Array.
-    
-    ////////// TESTING PURPOSES
-    
-    /*Cats *tryDeletingCat = catsCurrentlyOnScreen[0]; *************** !!! <---- now this entire block will give me errors because catsCurrentlyOnScreen
-     ////////////Now only contains strings (of the cat's names) instead of the actual cat objects.
-    NSLog(@"***************************");
-    NSLog(@"What cat am I trying to delete from screen? %@ and what is his current loyalty? %i <--- All from tryDeletingCat datastruct", tryDeletingCat.name, tryDeletingCat.currLoyaltyCounter);
-    tryDeletingCat.currLoyaltyCounter ++;
-    NSLog(@"This is trydeletingcat's new loyaltyCounter: %i", tryDeletingCat.currLoyaltyCounter);*/
-    
-   /* NSLog(@"***************************");
-    
-    Cats *actualLizard = [[GameData sharedGameData].allCatsInGame objectForKey: catsCurrentlyOnScreen[0]];
-    NSLog (@"ActualLizard's name: %@",actualLizard.name);
-    NSLog(@"ActuaLizard's current Loyalty Counter %i", actualLizard.currLoyaltyCounter);
-    actualLizard.currLoyaltyCounter --;
-    NSLog(@" After I subtract ActuaLizard's current Loyalty Counter by 1, I get %i", actualLizard.currLoyaltyCounter);*/
-
     
     NSLog(@"***************************");
 
 
     
     
-    //////////////////////////// ^^ SHOWED THAT YOU NEED TO MAKE ALL CHANGES IN CAT PROPERTIES IN THE MASTER CAT ARRAY
+    // if there is at least one cat on this screen, go into the following loop (for each cat on screen)
     if (howManyCatsOnScreen > 0){
+        // testing purposes
         NSLog(@"HEYYYYYYYYY IN THE IF STATEMENT");
+        
+        // get a random number from 0 to 4; if the random number is 0, delete the cat you are talking about it.
         int randomIntToUse = 5;
         for (int abc = 0; abc < [catsCurrentlyOnScreen count]; abc ++){
             int result = arc4random_uniform(randomIntToUse);
-            if (result == 0){ ///// DELETE THE CAT FROM ON SCREEN IF RESULT = O
+            // testing purposes
+            NSLog(@"Random Result was: %i", result);
+            if (result == 0){
+                // testing purposes
                 NSLog(@"HEYYYYYYYYY RESULT EQUALED 0!!!!");
                 NSString *deletedCatName = catsCurrentlyOnScreen[abc];
                 Cats *deletedCat = [[GameData sharedGameData].allCatsInGame objectForKey: deletedCatName];
-    
+                
+                // if a cat needs to be deleted, increase its loyalty counter by one (unless it is already at its max loyalty)
                 if (deletedCat.currLoyaltyCounter < deletedCat.maxLoyalty){
                     deletedCat.currLoyaltyCounter ++;
                     if (deletedCat.currLoyaltyCounter >= deletedCat.loyaltyThreshold){
@@ -659,6 +490,7 @@
                     }
                 }
                 
+                // change the deleted cat's on screen value to false, deassociate it with any items, set the items isBeingUsed value to NO. Add between 0 to the deleted cat's current loyalty prey points to the prey point total
                 deletedCat.onScreen = false;
                 NSString *associatedItemName = deletedCat.associatedItem;
                 DecorativeItems *itemFreedUp = [[GameData sharedGameData].allItemsInGame objectForKey:associatedItemName];
@@ -668,6 +500,7 @@
                 deletedCat.associatedItem = @"123456";
                 int addedPreyPoints = arc4random_uniform(deletedCat.currLoyaltyCounter + 1);
                 [GameData sharedGameData].preyPoints += addedPreyPoints;
+                // testing purposes
                 NSLog(@"Total PreyPoints = %i", [GameData sharedGameData].preyPoints);
                 
                 [currCatsAndPosOnScreen removeObjectForKey:catsCurrentlyOnScreen[abc]];
@@ -675,25 +508,16 @@
                 [catsCurrentlyOnScreen removeObjectAtIndex:abc];
                 abc --; // all other enteries are shifted to the left
                 
-            } ///////// END OF CAT DELETION <--- remember to abc --;
+            } ///////// END OF CAT DELETION
         } //// end of for loop
     } //// end of if.
     
     NSLog(@"***************************");
 
     
-    // NOW GO THROUGH EACH CAT IN THE GAME AND PUT THEM IN THE AVAILABLE OR NOT AVAILABLE GROUP.
-    // CATS ALREADY ON SCREEN ARE AUTOMATICALLY NOT AVAILABLE.
+    // Now go through each cat in the game and put them in the available or not available group; Cats that are already on the screen are automatically not available. Cats may be unavialble because their specific food or items are not on the screen....the logic is set up, but we have not implemented it yet because it we did not have time to check it for bugs.
     NSMutableArray *catsAvailableToGoOnScreen = [[NSMutableArray alloc]init]; // <---- only names of cats, not actual cat objs
     
-    /////// TESTING STUFF ON FRIDAY NIGHT BEFORE DUE DATE
-    
-    /*[catsAvailableToGoOnScreen addObject:@"Lily"];
-    [catsAvailableToGoOnScreen addObject:@"Cooper"];
-    [catsAvailableToGoOnScreen addObject:@"Birch"];
-    [catsAvailableToGoOnScreen addObject: @"Rowan"];*/
-    
-    ///////////////
     NSMutableArray *catsNotAvailableToGoONScreen = [[NSMutableArray alloc] init];
     NSArray *allCatNames = [[GameData sharedGameData].allCatsInGame allKeys];
     for (int qwe = 0; qwe < [allCatNames count]; qwe ++){
@@ -721,21 +545,22 @@
         
     }
     
-    /////// TESTING ON FRIDAY CATS
+    /////// Testing purposes
     
     NSLog (@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     NSLog(@"All the bloody cats in the catsAvailableToGoOnScreen...should be all the cats! %@", catsAvailableToGoOnScreen);
     NSLog (@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     
-    ////////  CAT TEST WORKED FINE
+    ////////  testing purposes
     
     
     
     
     ///// END OF GOING THROUGH EACH CAT AND PUTTING THEM IN AVAILABLE OR UN-AVAILABLE GROUP.
     
-    // GO THROUGH EACH ITEM AND PUT IT IN AVAILABLE FOR USE OR NOT.
-    NSMutableArray *itemOnScreenAndNotBeingUsed = [[NSMutableArray alloc]init]; // <-- only contains keys to the items
+    
+    // Go through each item and put in an availabe or not available group. The available group contains items that are not being used and are on screen.
+    NSMutableArray *itemOnScreenAndNotBeingUsed = [[NSMutableArray alloc]init];
     NSArray *allTheItemNames = [[GameData sharedGameData].allItemsInGame allKeys];
     for (int rty = 0; rty <[allItemNames count]; rty ++){
         DecorativeItems *itemInQuestion = [[GameData sharedGameData].allItemsInGame objectForKey:allTheItemNames[rty]];
@@ -746,41 +571,19 @@
     }
     
     
-    /////// TESTING ON FRIDAY ITEMS
+    /////// testing purposes
     
      NSLog (@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
      NSLog(@"All the bloody items in the itemOnScreenAndNotBeingUsed...should be none of the items right now! %@", itemOnScreenAndNotBeingUsed);
      NSLog (@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     
-    //////// ITEM TEST WORKED FINE
-    
-    
-    
-    
+
     
     /////// END OF SORTING ITEMS
     
     //////  IMPLEMENT LOGIC FOR WHICH CATS GET TO GO ON WHICH FREE ITEMS ON SCREEN
-    
-    /*[itemOnScreenAndNotBeingUsed addObject:@"Pile Of Leaves"];
-    [itemOnScreenAndNotBeingUsed addObject:@"Rib Cage"];
-    [itemOnScreenAndNotBeingUsed addObject:@"Tree Stump"];
-    
-    DecorativeItems *pileLeaves = [[GameData sharedGameData].allItemsInGame objectForKey:@"Pile Of Leaves"];
-    pileLeaves.itemPosition = @3;
-    
-    DecorativeItems *ribCage = [[GameData sharedGameData].allItemsInGame objectForKey:@"Rib Cage"];
-    ribCage.itemPosition = @3;
-    
-    DecorativeItems *treeStump = [[GameData sharedGameData].allItemsInGame objectForKey:@"Tree Stump"];
-    treeStump.itemPosition = @3;
-    
-    NSLog(@"#######################################################################");
-    NSLog(@"The cat available to go on screen in the 0th position is: %@", catsAvailableToGoOnScreen[0]);
-    NSLog(@"The cat available to go on screen in the 1st position is: %@", catsAvailableToGoOnScreen[1]);
-    NSLog(@"The cat available to go on screen in the 2nd position is: %@", catsAvailableToGoOnScreen[2]);*/
 
-    
+    // now, for each item that is available (on screen and not being used)....get a random number between 0 and the number of available cats *5. If the number is between 0 and the number of available cats -1, add the cat at the random number's index to the item. Do some bookkeeping like setting the items isBeingUsed value to YES and other things of that nature. 
     for (int sdf = 0; sdf < [itemOnScreenAndNotBeingUsed count]; sdf++){
         DecorativeItems *itemTalkedAbout = [[GameData sharedGameData].allItemsInGame objectForKey:itemOnScreenAndNotBeingUsed[sdf]];
         int numOfAvailableCats = [catsAvailableToGoOnScreen count];

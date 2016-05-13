@@ -28,6 +28,7 @@
 		9764C9231CD7D2EE008CDCB5 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764C9221CD7D2EE008CDCB5 /* Shop.m */; };
 		9764C9251CD7D3F9008CDCB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9764C9241CD7D3F9008CDCB5 /* Main.storyboard */; };
 		979C12321CE1265A0006F326 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97282CB11CCD750E00DC1CEC /* StartViewController.m */; };
+		979C12371CE660990006F326 /* AddFoodScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 979C12361CE660990006F326 /* AddFoodScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		9764C9211CD7D2D9008CDCB5 /* Shop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
 		9764C9221CD7D2EE008CDCB5 /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
 		9764C9241CD7D3F9008CDCB5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		979C12351CE6608E0006F326 /* AddFoodScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoodScreen.h; sourceTree = "<group>"; };
+		979C12361CE660990006F326 /* AddFoodScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoodScreen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 				972FE3BE1CC98DD0004ED064 /* Assets.xcassets */,
 				972FE3EA1CC99345004ED064 /* Food.h */,
 				972FE3EB1CC99345004ED064 /* Food.m */,
+				979C12351CE6608E0006F326 /* AddFoodScreen.h */,
+				979C12361CE660990006F326 /* AddFoodScreen.m */,
 				972FE3ED1CC993D2004ED064 /* DecorativeItems.h */,
 				972FE3EE1CC993D2004ED064 /* DecorativeItems.m */,
 				9713A9721CD6A9E300FD517E /* AddItemScreen.h */,
@@ -345,6 +350,7 @@
 				9713A9791CD6A9E300FD517E /* DecorationInventory.m in Sources */,
 				972FE3EF1CC993D2004ED064 /* DecorativeItems.m in Sources */,
 				972FE3EC1CC99345004ED064 /* Food.m in Sources */,
+				979C12371CE660990006F326 /* AddFoodScreen.m in Sources */,
 				9713A97A1CD6A9E300FD517E /* FoodInventory.m in Sources */,
 				979C12321CE1265A0006F326 /* StartViewController.m in Sources */,
 				972FE3AF1CC98DD0004ED064 /* main.m in Sources */,

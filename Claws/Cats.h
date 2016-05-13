@@ -2,12 +2,13 @@
 //  ViewController.h
 //  Claws
 //
-//  Created by Libby Goss on 4/21/16.
+//  Created by Meet Mehta on 4/21/16.
 //  Copyright © 2016 nyu.edu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
+// all the properties of the cats
 @interface Cats : NSObject <NSCoding,NSCopying>
 
 @property (strong, nonatomic)    NSString *name;

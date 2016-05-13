@@ -2,13 +2,14 @@
 //  DecorativeItems.h
 //  Claws
 //
-//  Created by Libby Goss on 4/21/16.
+//  Created by Meet Mehta on 4/21/16.
 //  Copyright © 2016 nyu.edu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+// properties for the decorative items
 @interface DecorativeItems : NSObject <NSCoding>
 
 @property (assign, nonatomic) int cost;

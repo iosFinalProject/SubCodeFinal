@@ -2,7 +2,7 @@
 //  ViewController.m
 //  Claws
 //
-//  Created by Libby Goss on 4/21/16.
+//  Created by Meet Mehta on 4/21/16.
 //  Copyright © 2016 nyu.edu. All rights reserved.
 //
 
@@ -14,6 +14,8 @@
 
 @implementation Cats
 
+// you have to encode and decode the cats too because GameData uses arrays where the cat object is an item in the array. So Cats need to follow the
+// the encoding protocol
 static NSString* const SSCatsNameKey = @"name123";
 static NSString* const SSCatsCurrLoyaltyKey = @"currLoyalty123";
 static NSString* const SSCatsMaxLoyaltyKey = @"maxLoyalty123";
@@ -68,6 +70,7 @@ static NSString* const SSCatsPositionPictures = @"positionPictures123";
     return self;
 }
 
+// not needed but was necessary for one part of the testing 
 - (id)copyWithZone:(NSZone *)zone {
     Cats *newCat = [[[self class] allocWithZone:zone] init];
     if(newCat) {

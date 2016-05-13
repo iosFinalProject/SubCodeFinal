@@ -16,10 +16,12 @@
     
 }
 
-
+// this is needed because we need to be able to grab an intem from the inventory and place it on the main game scene
 @property (strong, nonatomic) NSMutableArray *myMutableArray;
 @property (nonatomic) int displayScore;
-@property (strong, nonatomic) NSString *itemToAddFromInventory; 
+@property (strong, nonatomic) NSString *itemToAddFromInventory;
+@property (strong, nonatomic) NSString *foodToAddFromInventory;
+
 
 
 

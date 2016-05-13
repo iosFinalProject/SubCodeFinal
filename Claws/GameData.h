@@ -2,13 +2,15 @@
 //  GameData.h
 //  Claws
 //
-//  Created by Libby Goss on 4/23/16.
+//  Created by Meet Mehta on 4/23/16.
 //  Copyright © 2016 nyu.edu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 @interface GameData : NSObject <NSCoding>
+
+// this is all the game data that needs to persist through different launches
 
 @property (strong, nonatomic) NSMutableDictionary *ItemsAndPosOnScreen;
 @property (strong, nonatomic) NSMutableDictionary *CatsAndPosOnScreen;
@@ -19,6 +21,10 @@
 @property (assign, nonatomic) int highScore; /////// for testing purposes
 @property (assign, nonatomic) bool isFood;
 @property (assign, nonatomic) int preyPoints;
+
+@property (strong, nonatomic) NSMutableDictionary *allFoodInGame;
+@property (strong, nonatomic) NSMutableDictionary *FoodAndPosOnScreen;
+
 
 
 

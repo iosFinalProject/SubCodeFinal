@@ -34,9 +34,11 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// depending on which button was hit to cause the navigation back to the main game screen, you have to set the placed item's position appropriately
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
+    // first, you have to delete the item that currently inhabits the chosen position...(delete it from the screen, not the game)...you have to disassociate the item with any cats - you have to set variables such as isBeingUsed and itemPosition, etc too...basic bookkeeping
      if ([[segue identifier] isEqualToString:@"4thPosition"]) {
          GameViewController *controller = [segue destinationViewController];
          controller.itemToAddFromInventory = _addItem;  ///// MIGHT NOT NEED THIS
@@ -56,6 +58,7 @@
              } // end if
          }// end for ---- end of dealing with Item to be deleted
          
+         // you have to get rid of any cats that are in that position...same basic bookkeeping as getting rid of the old item
          int howManyCatsOnScreenNow = [[GameData sharedGameData].CatsAndPosOnScreen count];
          NSArray *allCatNamesOnScreen = [[GameData sharedGameData].CatsAndPosOnScreen allKeys];
          for (int iop = 0; iop <howManyCatsOnScreenNow; iop++){
@@ -81,7 +84,7 @@
              } //if
          } // end for ----- end of dealing with Cat to be Deleted
          
-         //////////// ADD IN THE ACTUAL ITEM NOW
+         // you have to add in the new item in the correct position now. Update some of the item's variables. Bookkeeping
          [[GameData sharedGameData].ItemsAndPosOnScreen setObject:@4 forKey: _addItem];
          [currItemsAndPosOnScreen setObject:@4 forKey:_addItem];
          DecorativeItems *actualItemToBeAdded = [[GameData sharedGameData].allItemsInGame objectForKey:_addItem];
@@ -98,7 +101,7 @@
      } //end if 4thPosition
     
     
-    //////// 3RD POSITION TRY
+    // Do the same thing for the 3rd, 2nd, and 1st position buttons...in case one of those is hit 
     
     if ([[segue identifier] isEqualToString:@"3rdPosition"]) {
         GameViewController *controller = [segue destinationViewController];

@@ -2,7 +2,7 @@
 //  Test.m
 //  Claws
 //
-//  Created by Libby Goss on 4/21/16.
+//  Created by Meet Mehta on 4/21/16.
 //  Copyright © 2016 nyu.edu. All rights reserved.
 //
 
@@ -11,6 +11,8 @@
 @interface Test ()
 
 @end
+
+// a simple test UI View Controller. Very helpful in testing 
 
 @implementation Test
 

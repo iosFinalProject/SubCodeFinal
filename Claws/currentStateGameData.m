@@ -2,7 +2,7 @@
 //  currentStateGameData.m
 //  Claws
 //
-//  Created by Libby Goss on 4/24/16.
+//  Created by Meet Mehta on 4/24/16.
 //  Copyright © 2016 nyu.edu. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 int highScore1;
 NSMutableDictionary *currCatsAndPosOnScreen;
 NSMutableDictionary *currItemsAndPosOnScreen;
-//NSArray *allCatsInGame;
+NSMutableDictionary *currFoodsAndPosOnScreen;
 bool food1; 
 
 @end

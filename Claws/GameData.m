@@ -2,13 +2,16 @@
 //  GameData.m
 //  Claws
 //
-//  Created by Libby Goss on 4/23/16.
+//  Created by Meet Mehta on 4/23/16.
 //  Copyright © 2016 nyu.edu. All rights reserved.
 //
 
 #import "GameData.h"
 
 @implementation GameData
+
+// this is how the game data is "saved"....you encode the data when you save it, decode it when you need it, and save it to a file.
+// Got a lot of help from : https://www.raywenderlich.com/63235/how-to-save-your-game-data-tutorial-part-1-of-2
 
 static NSString* const SSGameDataHighScoreKey = @"highScore";
 static NSString* const SSGameDataTotalTestArray = @"totalTestArray";
@@ -17,8 +20,9 @@ static NSString* const SSGameDataItemsOnScreen = @"itemsOnScreen1";
 static NSString* const SSGameDataAllCatsInGame = @"allCatsInGame";
 static NSString* const SSGameDataAllItemsInGame = @"allItemsInGame";
 static NSString* const SSGameDataPreyPoints = @"preyPoints";
+static NSString* const SSGameDataAllFoodInGame = @"allFoodInGame";
+static NSString* const SSGameDataFoodsOnScreen = @"foodsOnScreen1";
 
-///////// NEED TO ENCODE SPECIFIC ITEMS AND FOOD
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
     [encoder encodeInt:self.highScore forKey: SSGameDataHighScoreKey];
@@ -28,6 +32,8 @@ static NSString* const SSGameDataPreyPoints = @"preyPoints";
     [encoder encodeObject:self.allCatsInGame forKey:SSGameDataAllCatsInGame];
     [encoder encodeObject:self.allItemsInGame forKey:SSGameDataAllItemsInGame];
     [encoder encodeInt: self.preyPoints forKey: SSGameDataPreyPoints];
+    [encoder encodeObject:self.FoodAndPosOnScreen forKey: SSGameDataFoodsOnScreen];
+    [encoder encodeObject:self.allFoodInGame forKey: SSGameDataAllFoodInGame];
     
     
 }
@@ -43,12 +49,15 @@ static NSString* const SSGameDataPreyPoints = @"preyPoints";
         _allCatsInGame = [decoder decodeObjectForKey: SSGameDataAllCatsInGame];
         _allItemsInGame = [decoder decodeObjectForKey: SSGameDataAllItemsInGame];
         _preyPoints = [decoder decodeIntForKey: SSGameDataPreyPoints];
+        _allFoodInGame = [decoder decodeObjectForKey: SSGameDataAllFoodInGame];
+        _FoodAndPosOnScreen = [decoder decodeObjectForKey: SSGameDataFoodsOnScreen];
         
         
     }
     return self;
 }
 
+// file path where the game data is saved
 +(NSString*)filePath
 {
     static NSString* filePath = nil;
@@ -60,6 +69,7 @@ static NSString* const SSGameDataPreyPoints = @"preyPoints";
     return filePath;
 }
 
+// load game data
 +(instancetype)loadInstance
 {
     NSData* decodedData = [NSData dataWithContentsOfFile: [GameData filePath]];
@@ -71,6 +81,7 @@ static NSString* const SSGameDataPreyPoints = @"preyPoints";
     return [[GameData alloc] init];
 }
 
+// save game data
 -(void)save
 {
     NSData* encodedData = [NSKeyedArchiver archivedDataWithRootObject: self];
@@ -79,8 +90,8 @@ static NSString* const SSGameDataPreyPoints = @"preyPoints";
 
 
 
-/// help from https://www.raywenderlich.com/63235/how-to-save-your-game-data-tutorial-part-1-of-2
 
+// make sure game data can be accessed by all files and that all the game data is the same.
 + (instancetype)sharedGameData {
     static id sharedInstance = nil;
     
