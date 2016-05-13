@@ -22,7 +22,8 @@
     //other imagePos
 @property (assign, nonatomic)    BOOL onScreen; //boolean
 @property (assign, nonatomic)    BOOL available; //boolean
-@property (strong, nonatomic)    NSString* associatedItem; 
+@property (strong, nonatomic)    NSString* associatedItem;
+@property (strong, nonatomic)     NSMutableArray *CatPositionPictures;
 
 
 

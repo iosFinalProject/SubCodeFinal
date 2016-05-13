@@ -19,6 +19,7 @@ static NSString* const SSItemAssociatedCat = @"associatedCat456";
 static NSString* const SSItemName = @"itemName456";
 static NSString* const SSItemPositionCat = @"positionCat456";
 static NSString* const SSItemPositionOfItem = @"positionItem456";
+static NSString* const SSItemPicture = @"pictureItem456";
 
 
 
@@ -36,6 +37,7 @@ static NSString* const SSItemPositionOfItem = @"positionItem456";
     [encoder encodeObject:self.itemName forKey: SSItemName];
     [encoder encodeObject:self.positionOfCat forKey: SSItemPositionCat];
     [encoder encodeObject:self.itemPosition forKey: SSItemPositionOfItem];
+    [encoder encodeObject:self.picture forKey:SSItemPicture];
 
 
 
@@ -55,6 +57,7 @@ static NSString* const SSItemPositionOfItem = @"positionItem456";
         _itemName = [decoder decodeObjectForKey:SSItemName];
         _positionOfCat = [decoder decodeObjectForKey:SSItemPositionCat];
         _itemPosition = [decoder decodeObjectForKey:SSItemPositionOfItem];
+        _picture = [decoder decodeObjectForKey: SSItemPicture]; 
 
 
     }

@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSString *associatedCat;
 @property (strong, nonatomic) NSString *itemName;
 @property (strong, nonatomic) NSString *positionOfCat;
+@property (strong, nonatomic) NSString *picture; 
 
 
 //NSInteger decorativeValue;

@@ -19,6 +19,7 @@
 
 @property (strong, nonatomic) NSMutableArray *myMutableArray;
 @property (nonatomic) int displayScore;
+@property (strong, nonatomic) NSString *itemToAddFromInventory; 
 
 
 

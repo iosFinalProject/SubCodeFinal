@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97282CB21CCD750E00DC1CEC /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97282CB11CCD750E00DC1CEC /* StartViewController.m */; };
+		9713A9781CD6A9E300FD517E /* AddItemScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 9713A9731CD6A9E300FD517E /* AddItemScreen.m */; };
+		9713A9791CD6A9E300FD517E /* DecorationInventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9713A9751CD6A9E300FD517E /* DecorationInventory.m */; };
+		9713A97A1CD6A9E300FD517E /* FoodInventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9713A9771CD6A9E300FD517E /* FoodInventory.m */; };
 		97282CB51CCDA23700DC1CEC /* currentStateGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 97282CB41CCDA23700DC1CEC /* currentStateGameData.m */; };
 		972FE3AF1CC98DD0004ED064 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3AE1CC98DD0004ED064 /* main.m */; };
 		972FE3B21CC98DD0004ED064 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3B11CC98DD0004ED064 /* AppDelegate.m */; };
 		972FE3B51CC98DD0004ED064 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3B41CC98DD0004ED064 /* GameScene.m */; };
 		972FE3B71CC98DD0004ED064 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 972FE3B61CC98DD0004ED064 /* GameScene.sks */; };
 		972FE3BA1CC98DD0004ED064 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3B91CC98DD0004ED064 /* GameViewController.m */; };
-		972FE3BD1CC98DD0004ED064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972FE3BB1CC98DD0004ED064 /* Main.storyboard */; };
 		972FE3BF1CC98DD0004ED064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 972FE3BE1CC98DD0004ED064 /* Assets.xcassets */; };
 		972FE3C21CC98DD0004ED064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972FE3C01CC98DD0004ED064 /* LaunchScreen.storyboard */; };
 		972FE3CD1CC98DD0004ED064 /* ClawsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3CC1CC98DD0004ED064 /* ClawsTests.m */; };
@@ -24,6 +25,9 @@
 		972FE3EF1CC993D2004ED064 /* DecorativeItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3EE1CC993D2004ED064 /* DecorativeItems.m */; };
 		972FE3F21CC99F64004ED064 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3F11CC99F64004ED064 /* Test.m */; };
 		972FE3F71CCC1893004ED064 /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FE3F61CCC1893004ED064 /* GameData.m */; };
+		9764C9231CD7D2EE008CDCB5 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 9764C9221CD7D2EE008CDCB5 /* Shop.m */; };
+		9764C9251CD7D3F9008CDCB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9764C9241CD7D3F9008CDCB5 /* Main.storyboard */; };
+		979C12321CE1265A0006F326 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97282CB11CCD750E00DC1CEC /* StartViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9713A9721CD6A9E300FD517E /* AddItemScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemScreen.h; sourceTree = "<group>"; };
+		9713A9731CD6A9E300FD517E /* AddItemScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemScreen.m; sourceTree = "<group>"; };
+		9713A9741CD6A9E300FD517E /* DecorationInventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecorationInventory.h; sourceTree = "<group>"; };
+		9713A9751CD6A9E300FD517E /* DecorationInventory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecorationInventory.m; sourceTree = "<group>"; };
+		9713A9761CD6A9E300FD517E /* FoodInventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodInventory.h; sourceTree = "<group>"; };
+		9713A9771CD6A9E300FD517E /* FoodInventory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodInventory.m; sourceTree = "<group>"; };
 		97282CB01CCD750E00DC1CEC /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		97282CB11CCD750E00DC1CEC /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		97282CB31CCDA23700DC1CEC /* currentStateGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = currentStateGameData.h; sourceTree = "<group>"; };
@@ -57,7 +67,6 @@
 		972FE3B61CC98DD0004ED064 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		972FE3B81CC98DD0004ED064 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		972FE3B91CC98DD0004ED064 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		972FE3BC1CC98DD0004ED064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		972FE3BE1CC98DD0004ED064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		972FE3C11CC98DD0004ED064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		972FE3C31CC98DD0004ED064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +86,9 @@
 		972FE3F11CC99F64004ED064 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		972FE3F51CCC1893004ED064 /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
 		972FE3F61CCC1893004ED064 /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
+		9764C9211CD7D2D9008CDCB5 /* Shop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
+		9764C9221CD7D2EE008CDCB5 /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
+		9764C9241CD7D3F9008CDCB5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,12 +156,20 @@
 				97282CB11CCD750E00DC1CEC /* StartViewController.m */,
 				972FE3F01CC99F64004ED064 /* Test.h */,
 				972FE3F11CC99F64004ED064 /* Test.m */,
-				972FE3BB1CC98DD0004ED064 /* Main.storyboard */,
+				9764C9241CD7D3F9008CDCB5 /* Main.storyboard */,
 				972FE3BE1CC98DD0004ED064 /* Assets.xcassets */,
 				972FE3EA1CC99345004ED064 /* Food.h */,
 				972FE3EB1CC99345004ED064 /* Food.m */,
 				972FE3ED1CC993D2004ED064 /* DecorativeItems.h */,
 				972FE3EE1CC993D2004ED064 /* DecorativeItems.m */,
+				9713A9721CD6A9E300FD517E /* AddItemScreen.h */,
+				9713A9731CD6A9E300FD517E /* AddItemScreen.m */,
+				9713A9741CD6A9E300FD517E /* DecorationInventory.h */,
+				9713A9751CD6A9E300FD517E /* DecorationInventory.m */,
+				9713A9761CD6A9E300FD517E /* FoodInventory.h */,
+				9713A9771CD6A9E300FD517E /* FoodInventory.m */,
+				9764C9221CD7D2EE008CDCB5 /* Shop.m */,
+				9764C9211CD7D2D9008CDCB5 /* Shop.h */,
 				972FE3C01CC98DD0004ED064 /* LaunchScreen.storyboard */,
 				972FE3C31CC98DD0004ED064 /* Info.plist */,
 				972FE3AD1CC98DCF004ED064 /* Supporting Files */,
@@ -287,9 +307,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				972FE3B71CC98DD0004ED064 /* GameScene.sks in Resources */,
+				9764C9251CD7D3F9008CDCB5 /* Main.storyboard in Resources */,
 				972FE3C21CC98DD0004ED064 /* LaunchScreen.storyboard in Resources */,
 				972FE3BF1CC98DD0004ED064 /* Assets.xcassets in Resources */,
-				972FE3BD1CC98DD0004ED064 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,13 +336,17 @@
 			files = (
 				972FE3F71CCC1893004ED064 /* GameData.m in Sources */,
 				97282CB51CCDA23700DC1CEC /* currentStateGameData.m in Sources */,
+				9713A9781CD6A9E300FD517E /* AddItemScreen.m in Sources */,
 				972FE3BA1CC98DD0004ED064 /* GameViewController.m in Sources */,
 				972FE3F21CC99F64004ED064 /* Test.m in Sources */,
+				9764C9231CD7D2EE008CDCB5 /* Shop.m in Sources */,
 				972FE3B21CC98DD0004ED064 /* AppDelegate.m in Sources */,
 				972FE3B51CC98DD0004ED064 /* GameScene.m in Sources */,
+				9713A9791CD6A9E300FD517E /* DecorationInventory.m in Sources */,
 				972FE3EF1CC993D2004ED064 /* DecorativeItems.m in Sources */,
 				972FE3EC1CC99345004ED064 /* Food.m in Sources */,
-				97282CB21CCD750E00DC1CEC /* StartViewController.m in Sources */,
+				9713A97A1CD6A9E300FD517E /* FoodInventory.m in Sources */,
+				979C12321CE1265A0006F326 /* StartViewController.m in Sources */,
 				972FE3AF1CC98DD0004ED064 /* main.m in Sources */,
 				972FE3E91CC99261004ED064 /* Cats.m in Sources */,
 			);
@@ -360,14 +384,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		972FE3BB1CC98DD0004ED064 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				972FE3BC1CC98DD0004ED064 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		972FE3C01CC98DD0004ED064 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
