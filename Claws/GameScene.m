@@ -7,7 +7,6 @@
 //
 
 #import "GameScene.h"
-//#import "GameViewController.h"
 #import "GameViewController.h"
 #import "GameData.h"
 #import "currentStateGameData.h"
@@ -184,14 +183,20 @@ bool foodInScene = false;
     NSLog (@"How many Items in curritemsAndPos: %i", [currItemsAndPosOnScreen count]);
     NSLog (@"  How many items in gameshared data: %i", [[GameData sharedGameData].ItemsAndPosOnScreen count]);
     
-    NSNumber *positionAssociatedWithItem = currItemsAndPosOnScreen[keyArrayItems [0]];
-    //NSArray *positionArrayItems12 = [GameData sharedGameData].ItemsAndPosOnScreen[keyArray [0]];
-    //int xIntItems = [positionArrayItems12[0] integerValue];
-    //int yIntItems = [positionArrayItems12 [1] integerValue];
-    
-    NSLog(@ "%@", positionAssociatedWithItem);
-    //NSLog(@ "%i", yIntItems);
-    NSLog (@"-----------------------------------------------------------");
+    if ([keyArrayItems count] != 0){
+        NSNumber *positionAssociatedWithItem = currItemsAndPosOnScreen[keyArrayItems [0]];
+        //NSArray *positionArrayItems12 = [GameData sharedGameData].ItemsAndPosOnScreen[keyArray [0]];
+        //int xIntItems = [positionArrayItems12[0] integerValue];
+        //int yIntItems = [positionArrayItems12 [1] integerValue];
+        
+        NSLog(@ "%@", positionAssociatedWithItem);
+        if ([keyArrayItems count] >= 2){
+            NSLog(@ "%@", currItemsAndPosOnScreen[keyArrayItems [1]]);
+        }
+        //NSLog(@ "%i", yIntItems);
+        NSLog (@"-----------------------------------------------------------");
+
+    }
     
     NSLog (@"Total Cats in Master Array %i", [[GameData sharedGameData].allCatsInGame count]);
     NSArray *catsNames = [[GameData sharedGameData].allCatsInGame allKeys];

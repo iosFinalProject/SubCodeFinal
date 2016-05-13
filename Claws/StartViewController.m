@@ -23,6 +23,8 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
+    
+    
     [[GameData sharedGameData].ItemsAndPosOnScreen removeObjectForKey:@"Sunning Rocks"];
     [currItemsAndPosOnScreen removeObjectForKey:@"Sunning Rocks"];
     DecorativeItems *graniteBlock = [[GameData sharedGameData].allItemsInGame objectForKey:@"Sunning Rocks"];
@@ -31,173 +33,193 @@
     graniteBlock.itemPosition = @0;
     
     
-    /*DecorativeItems *blackberryBush = [[GameData sharedGameData].allItemsInGame objectForKey:@"Blackberry Bush"];
-    blackberryBush.picture = @"blackberry-bush.png";
     
-    DecorativeItems *birdSkull2 = [[GameData sharedGameData].allItemsInGame objectForKey:@"Bird Skull"];
-    birdSkull2.picture = @"birdSkull.png";
-    
-    DecorativeItems *treeStump2 = [[GameData sharedGameData].allItemsInGame objectForKey:@"Tree Stump"];
-    treeStump2.picture = @"stump.png";
-    
-    DecorativeItems *flatRock2 = [[GameData sharedGameData].allItemsInGame objectForKey:@"Small Flat Rock"];
-    flatRock2.picture = @"flatRock.png";
-    
-    DecorativeItems *sunningRocks2 = [[GameData sharedGameData].allItemsInGame objectForKey:@"Sunning Rocks"];
-    sunningRocks2.picture = @"granite.png";*/
-    
-
 
     
     ///// Recomment in cats and items
     
-    /*[GameData sharedGameData].allCatsInGame = [[NSMutableDictionary alloc] init];
+
+    if (!([GameData sharedGameData].allCatsInGame)){
+        
+        [GameData sharedGameData].allCatsInGame = [[NSMutableDictionary alloc] init];
+        [GameData sharedGameData].preyPoints = 100;
+        
+        Cats *Birch = [[Cats alloc] init];
+        Birch.name = @"Birch";
+        Birch.currLoyaltyCounter = 10;
+        Birch.loyaltyThreshold = 15;
+        Birch.maxLoyalty = 25;
+        Birch.specificFood = [[NSMutableArray alloc] init];
+        Birch.specificItems = [[NSMutableArray alloc] init];
+        Birch.inClan = false;
+        Birch.onScreen = false;
+        Birch.CatPositionPictures = [[NSMutableArray alloc]init];
+        [Birch.CatPositionPictures addObject:@"birch-pose-1.png"];
+        [[GameData sharedGameData].allCatsInGame setObject:Birch forKey:@"Birch"];
+        ////////////////////////////////////////////////////////////////////////////////
+        
+        Cats *Maple = [[Cats alloc] init];
+        Maple.name = @"Maple";
+        Maple.currLoyaltyCounter = 10;
+        Maple.loyaltyThreshold = 25;
+        Maple.maxLoyalty = 35;
+        Maple.specificFood = [[NSMutableArray alloc] init];
+        Maple.specificItems = [[NSMutableArray alloc] init];
+        Maple.inClan = false;
+        Maple.onScreen = false;
+        Maple.CatPositionPictures = [[NSMutableArray alloc]init];
+        [Maple.CatPositionPictures addObject:@"maple-pose-1.png"];
+        [[GameData sharedGameData].allCatsInGame setObject:Maple forKey:@"Maple"];
+        ////////////////////////////////////////////////////////////////////////////////
+        
+        Cats *Rowan = [[Cats alloc] init];
+        Rowan.name = @"Rowan";
+        Rowan.currLoyaltyCounter = 10;
+        Rowan.loyaltyThreshold = 30;
+        Rowan.maxLoyalty = 45;
+        Rowan.specificFood = [[NSMutableArray alloc] init];
+        Rowan.specificItems = [[NSMutableArray alloc] init];
+        Rowan.inClan = false;
+        Rowan.onScreen = false;
+        Rowan.CatPositionPictures = [[NSMutableArray alloc]init];
+        [Rowan.CatPositionPictures addObject:@"rowan-pose-1.png"];
+        [[GameData sharedGameData].allCatsInGame setObject:Rowan forKey:@"Rowan"];
+        ////////////////////////////////////////////////////////////////////////////////
+        
+        Cats *Lizard = [[Cats alloc] init];
+        Lizard.name = @"Lizard";
+        Lizard.currLoyaltyCounter = 10;
+        Lizard.loyaltyThreshold = 25;
+        Lizard.maxLoyalty = 35;
+        Lizard.specificFood = [[NSMutableArray alloc] init];
+        Lizard.specificItems = [[NSMutableArray alloc] init];
+        Lizard.inClan = false;
+        Lizard.onScreen = false;
+        Lizard.CatPositionPictures = [[NSMutableArray alloc]init];
+        [Lizard.CatPositionPictures addObject:@"lizard-pose-1.png"];
+        [[GameData sharedGameData].allCatsInGame setObject:Lizard forKey:@"Lizard"];
+        ////////////////////////////////////////////////////////////////////////////////
+        
+        Cats *Cloud = [[Cats alloc] init];
+        Cloud.name = @"Cloud";
+        Cloud.currLoyaltyCounter = 10;
+        Cloud.loyaltyThreshold = 17;
+        Cloud.maxLoyalty = 22;
+        Cloud.specificFood = [[NSMutableArray alloc] init];
+        Cloud.specificItems = [[NSMutableArray alloc] init];
+        Cloud.inClan = false;
+        Cloud.onScreen = false;
+        Cloud.CatPositionPictures = [[NSMutableArray alloc]init];
+        [Cloud.CatPositionPictures addObject:@"cloud-pose-1.png"];
+        [[GameData sharedGameData].allCatsInGame setObject:Cloud forKey:@"Cloud"];
+        ////////////////////////////////////////////////////////////////////////////////
+        
+        Cats *Pebble = [[Cats alloc] init];
+        Pebble.name = @"Pebble";
+        Pebble.currLoyaltyCounter = 10;
+        Pebble.loyaltyThreshold = 40;
+        Pebble.maxLoyalty = 45;
+        Pebble.specificFood = [[NSMutableArray alloc] init];
+        Pebble.specificItems = [[NSMutableArray alloc] init];
+        Pebble.inClan = false;
+        Pebble.onScreen = false;
+        Pebble.CatPositionPictures = [[NSMutableArray alloc]init];
+        [Pebble.CatPositionPictures addObject:@"pebble-pose-1.png"];
+        [[GameData sharedGameData].allCatsInGame setObject:Pebble forKey:@"Pebble"];
+        ////////////////////////////////////////////////////////////////////////////////
+        
+        Cats *Sparrow = [[Cats alloc] init];
+        Sparrow.name = @"Sparrow";
+        Sparrow.currLoyaltyCounter = 10;
+        Sparrow.loyaltyThreshold = 30;
+        Sparrow.maxLoyalty = 33;
+        Sparrow.specificFood = [[NSMutableArray alloc] init];
+        Sparrow.specificItems = [[NSMutableArray alloc] init];
+        Sparrow.inClan = false;
+        Sparrow.onScreen = false;
+        Sparrow.CatPositionPictures = [[NSMutableArray alloc]init];
+        [Sparrow.CatPositionPictures addObject:@"sparrow-pose-1.png"];
+        [[GameData sharedGameData].allCatsInGame setObject:Sparrow forKey:@"Sparrow"];
+        ////////////////////////////////////////////////////////////////////////////////
+        
+        Cats *Lily = [[Cats alloc] init];
+        Lily.name = @"Lily";
+        Lily.currLoyaltyCounter = 10;
+        Lily.loyaltyThreshold = 35;
+        Lily.maxLoyalty = 40;
+        Lily.specificFood = [[NSMutableArray alloc] init];
+        Lily.specificItems = [[NSMutableArray alloc] init];
+        Lily.inClan = false;
+        Lily.onScreen = false;
+        Lily.CatPositionPictures = [[NSMutableArray alloc]init];
+        [Lily.CatPositionPictures addObject:@"lily-pose-1.png"];
+        [[GameData sharedGameData].allCatsInGame setObject:Lily forKey:@"Lily"];
+        ////////////////////////////////////////////////////////////////////////////////
+        
+        Cats *Cinder = [[Cats alloc] init];
+        Cinder.name = @"Cinder";
+        Cinder.currLoyaltyCounter = 10;
+        Cinder.loyaltyThreshold = 27;
+        Cinder.maxLoyalty = 35;
+        Cinder.specificFood = [[NSMutableArray alloc] init];
+        Cinder.specificItems = [[NSMutableArray alloc] init];
+        Cinder.inClan = false;
+        Cinder.onScreen = false;
+        Cinder.CatPositionPictures = [[NSMutableArray alloc]init];
+        [Cinder.CatPositionPictures addObject:@"cinder-pose-1.png"];
+        [[GameData sharedGameData].allCatsInGame setObject:Cinder forKey:@"Cinder"];
+        ////////////////////////////////////////////////////////////////////////////////
+        
+        Cats *Cooper = [[Cats alloc] init];
+        Cooper.name = @"Cooper";
+        Cooper.currLoyaltyCounter = 10;
+        Cooper.loyaltyThreshold = 40;
+        Cooper.maxLoyalty = 50;
+        Cooper.specificFood = [[NSMutableArray alloc] init];
+        Cooper.specificItems = [[NSMutableArray alloc] init];
+        Cooper.inClan = false;
+        Cooper.onScreen = false;
+        Cooper.CatPositionPictures = [[NSMutableArray alloc]init];
+        [Cooper.CatPositionPictures addObject:@"cooper-pose-1.png"];
+        [[GameData sharedGameData].allCatsInGame setObject:Cooper forKey:@"Cooper"];
+        ////////////////////////////////////////////////////////////////////////////////
+        
+        Cats *Oak = [[Cats alloc] init];
+        Oak.name = @"Oak";
+        Oak.currLoyaltyCounter = 10;
+        Oak.loyaltyThreshold = 20;
+        Oak.maxLoyalty = 35;
+        Oak.specificFood = [[NSMutableArray alloc] init];
+        Oak.specificItems = [[NSMutableArray alloc] init];
+        Oak.inClan = false;
+        Oak.onScreen = false;
+        Oak.CatPositionPictures = [[NSMutableArray alloc]init];
+        [Oak.CatPositionPictures addObject:@"oak-pose-1.png"];
+        [[GameData sharedGameData].allCatsInGame setObject:Oak forKey:@"Oak"];
+        ////////////////////////////////////////////////////////////////////////////////
+        
+        Cats *Tawny = [[Cats alloc] init];
+        Tawny.name = @"Rowan";
+        Tawny.currLoyaltyCounter = 10;
+        Tawny.loyaltyThreshold = 12;
+        Tawny.maxLoyalty = 24;
+        Tawny.specificFood = [[NSMutableArray alloc] init];
+        Tawny.specificItems = [[NSMutableArray alloc] init];
+        Tawny.inClan = false;
+        Tawny.onScreen = false;
+        Tawny.CatPositionPictures = [[NSMutableArray alloc]init];
+        [Tawny.CatPositionPictures addObject:@"tawny-pose-1.png"];
+        [[GameData sharedGameData].allCatsInGame setObject:Tawny forKey:@"Tawny"];
+        
+        NSArray* allCatNamesPlease = [[GameData sharedGameData].allCatsInGame allKeys];
+        for (int tyu = 0; tyu < [allCatNamesPlease count]; tyu ++){
+            Cats *revisedCat = [[GameData sharedGameData].allCatsInGame objectForKey:allCatNamesPlease[tyu]];
+            revisedCat.associatedItem = @"123456";
+        } // <---------- Comment in if you're getting this from github.
+        
+    }
     
-    Cats *Birch = [[Cats alloc] init];
-    Birch.name = @"Birch";
-    Birch.currLoyaltyCounter = 10;
-    Birch.loyaltyThreshold = 15;
-    Birch.maxLoyalty = 25;
-    Birch.specificFood = [[NSMutableArray alloc] init];
-    Birch.specificItems = [[NSMutableArray alloc] init];
-    Birch.inClan = false; 
-    Birch.onScreen = false;
-    [[GameData sharedGameData].allCatsInGame setObject:Birch forKey:@"Birch"];
     ////////////////////////////////////////////////////////////////////////////////
-    
-    Cats *Maple = [[Cats alloc] init];
-    Maple.name = @"Maple";
-    Maple.currLoyaltyCounter = 10;
-    Maple.loyaltyThreshold = 25;
-    Maple.maxLoyalty = 35;
-    Maple.specificFood = [[NSMutableArray alloc] init];
-    Maple.specificItems = [[NSMutableArray alloc] init];
-    Maple.inClan = false;
-    Maple.onScreen = false;
-    [[GameData sharedGameData].allCatsInGame setObject:Maple forKey:@"Maple"];
-    ////////////////////////////////////////////////////////////////////////////////
-    
-    Cats *Rowan = [[Cats alloc] init];
-    Rowan.name = @"Rowan";
-    Rowan.currLoyaltyCounter = 10;
-    Rowan.loyaltyThreshold = 30;
-    Rowan.maxLoyalty = 45;
-    Rowan.specificFood = [[NSMutableArray alloc] init];
-    Rowan.specificItems = [[NSMutableArray alloc] init];
-    Rowan.inClan = false;
-    Rowan.onScreen = false;
-    [[GameData sharedGameData].allCatsInGame setObject:Rowan forKey:@"Rowan"];
-    ////////////////////////////////////////////////////////////////////////////////
-    
-    Cats *Lizard = [[Cats alloc] init];
-    Lizard.name = @"Lizard";
-    Lizard.currLoyaltyCounter = 10;
-    Lizard.loyaltyThreshold = 25;
-    Lizard.maxLoyalty = 35;
-    Lizard.specificFood = [[NSMutableArray alloc] init];
-    Lizard.specificItems = [[NSMutableArray alloc] init];
-    Lizard.inClan = false;
-    Lizard.onScreen = false;
-    [[GameData sharedGameData].allCatsInGame setObject:Lizard forKey:@"Lizard"];
-    ////////////////////////////////////////////////////////////////////////////////
-    
-    Cats *Cloud = [[Cats alloc] init];
-    Cloud.name = @"Cloud";
-    Cloud.currLoyaltyCounter = 10;
-    Cloud.loyaltyThreshold = 17;
-    Cloud.maxLoyalty = 22;
-    Cloud.specificFood = [[NSMutableArray alloc] init];
-    Cloud.specificItems = [[NSMutableArray alloc] init];
-    Cloud.inClan = false;
-    Cloud.onScreen = false;
-    [[GameData sharedGameData].allCatsInGame setObject:Cloud forKey:@"Cloud"];
-    ////////////////////////////////////////////////////////////////////////////////
-    
-    Cats *Pebble = [[Cats alloc] init];
-    Pebble.name = @"Pebble";
-    Pebble.currLoyaltyCounter = 10;
-    Pebble.loyaltyThreshold = 40;
-    Pebble.maxLoyalty = 45;
-    Pebble.specificFood = [[NSMutableArray alloc] init];
-    Pebble.specificItems = [[NSMutableArray alloc] init];
-    Pebble.inClan = false;
-    Pebble.onScreen = false;
-    [[GameData sharedGameData].allCatsInGame setObject:Pebble forKey:@"Pebble"];
-    ////////////////////////////////////////////////////////////////////////////////
-    
-    Cats *Sparrow = [[Cats alloc] init];
-    Sparrow.name = @"Sparrow";
-    Sparrow.currLoyaltyCounter = 10;
-    Sparrow.loyaltyThreshold = 30;
-    Sparrow.maxLoyalty = 33;
-    Sparrow.specificFood = [[NSMutableArray alloc] init];
-    Sparrow.specificItems = [[NSMutableArray alloc] init];
-    Sparrow.inClan = false;
-    Sparrow.onScreen = false;
-    [[GameData sharedGameData].allCatsInGame setObject:Sparrow forKey:@"Sparrow"];
-    ////////////////////////////////////////////////////////////////////////////////
-    
-    Cats *Lily = [[Cats alloc] init];
-    Lily.name = @"Lily";
-    Lily.currLoyaltyCounter = 10;
-    Lily.loyaltyThreshold = 35;
-    Lily.maxLoyalty = 40;
-    Lily.specificFood = [[NSMutableArray alloc] init];
-    Lily.specificItems = [[NSMutableArray alloc] init];
-    Lily.inClan = false;
-    Lily.onScreen = false;
-    [[GameData sharedGameData].allCatsInGame setObject:Lily forKey:@"Lily"];
-    ////////////////////////////////////////////////////////////////////////////////
-    
-    Cats *Cinder = [[Cats alloc] init];
-    Cinder.name = @"Cinder";
-    Cinder.currLoyaltyCounter = 10;
-    Cinder.loyaltyThreshold = 27;
-    Cinder.maxLoyalty = 35;
-    Cinder.specificFood = [[NSMutableArray alloc] init];
-    Cinder.specificItems = [[NSMutableArray alloc] init];
-    Cinder.inClan = false;
-    Cinder.onScreen = false;
-    [[GameData sharedGameData].allCatsInGame setObject:Cinder forKey:@"Cinder"];
-    ////////////////////////////////////////////////////////////////////////////////
-    
-    Cats *Cooper = [[Cats alloc] init];
-    Cooper.name = @"Cooper";
-    Cooper.currLoyaltyCounter = 10;
-    Cooper.loyaltyThreshold = 40;
-    Cooper.maxLoyalty = 50;
-    Cooper.specificFood = [[NSMutableArray alloc] init];
-    Cooper.specificItems = [[NSMutableArray alloc] init];
-    Cooper.inClan = false;
-    Cooper.onScreen = false;
-    [[GameData sharedGameData].allCatsInGame setObject:Cooper forKey:@"Cooper"];
-    ////////////////////////////////////////////////////////////////////////////////
-    
-    Cats *Oak = [[Cats alloc] init];
-    Oak.name = @"Oak";
-    Oak.currLoyaltyCounter = 10;
-    Oak.loyaltyThreshold = 20;
-    Oak.maxLoyalty = 35;
-    Oak.specificFood = [[NSMutableArray alloc] init];
-    Oak.specificItems = [[NSMutableArray alloc] init];
-    Oak.inClan = false;
-    Oak.onScreen = false;
-    [[GameData sharedGameData].allCatsInGame setObject:Oak forKey:@"Oak"];
-    ////////////////////////////////////////////////////////////////////////////////
-    
-    Cats *Tawny = [[Cats alloc] init];
-    Tawny.name = @"Rowan";
-    Tawny.currLoyaltyCounter = 10;
-    Tawny.loyaltyThreshold = 12;
-    Tawny.maxLoyalty = 24;
-    Tawny.specificFood = [[NSMutableArray alloc] init];
-    Tawny.specificItems = [[NSMutableArray alloc] init];
-    Tawny.inClan = false;
-    Tawny.onScreen = false;
-    [[GameData sharedGameData].allCatsInGame setObject:Tawny forKey:@"Tawny"];
-    ////////////////////////////////////////////////////////////////////////////////
-    
-    */
     
     
     /*Cats *Lizard = [[GameData sharedGameData].allCatsInGame objectForKey:@"Lizard"];
@@ -249,195 +271,197 @@
     [Birch.CatPositionPictures addObject:@"birch-pose-1.png"];*/
     
     
+    if (!([GameData sharedGameData].allItemsInGame)){
+        
+        [GameData sharedGameData].allItemsInGame = [[NSMutableDictionary alloc] init];
+        
+        
+        DecorativeItems *blackberryBush = [[DecorativeItems alloc]init];
+        blackberryBush.itemName = @"Blackberry Bush";
+        blackberryBush.cost = 60;
+        blackberryBush.isBeingUsed = NO;
+        blackberryBush.isBought = NO;
+        blackberryBush.isOnScreen = NO;
+        blackberryBush.associatedCat = @"45678";
+        blackberryBush.positionOfCat = @"headLeaves";
+        blackberryBush.picture = @"blackberry-bush.png";
+        [[GameData sharedGameData].allItemsInGame setObject:blackberryBush forKey:@"Blackberry Bush"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *pileLeaves = [[DecorativeItems alloc]init];
+        pileLeaves.itemName = @"Pile Of Leaves";
+        pileLeaves.cost = 40;
+        pileLeaves.isBeingUsed = NO;
+        pileLeaves.isBought = NO;
+        pileLeaves.isOnScreen = NO;
+        pileLeaves.associatedCat = @"45678";
+        pileLeaves.positionOfCat = @"headLeaves";
+        [[GameData sharedGameData].allItemsInGame setObject:pileLeaves forKey:@"Pile Of Leaves"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *birdSkull = [[DecorativeItems alloc]init];
+        birdSkull.itemName = @"Bird Skull";
+        birdSkull.cost = 250;
+        birdSkull.isBeingUsed = NO;
+        birdSkull.isBought = NO;
+        birdSkull.isOnScreen = NO;
+        birdSkull.associatedCat = @"45678";
+        birdSkull.positionOfCat = @"onHead";
+        birdSkull.picture = @"birdSkull.png";
+        [[GameData sharedGameData].allItemsInGame setObject:birdSkull forKey:@"Bird Skull"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *treeStump = [[DecorativeItems alloc]init];
+        treeStump.itemName = @"Tree Stump";
+        treeStump.cost = 120;
+        treeStump.isBeingUsed = NO;
+        treeStump.isBought = NO;
+        treeStump.isOnScreen = NO;
+        treeStump.associatedCat = @"45678";
+        treeStump.positionOfCat = @"laying";
+        treeStump.picture = @"stump.png";
+        [[GameData sharedGameData].allItemsInGame setObject:treeStump forKey:@"Tree Stump"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *ballMoss = [[DecorativeItems alloc]init];
+        ballMoss.itemName = @"Ball of Moss";
+        ballMoss.cost = 80;
+        ballMoss.isBeingUsed = NO;
+        ballMoss.isBought = NO;
+        ballMoss.isOnScreen = NO;
+        ballMoss.associatedCat = @"45678";
+        ballMoss.positionOfCat = @"swatting";
+        [[GameData sharedGameData].allItemsInGame setObject:ballMoss forKey:@"Ball of Moss"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *hawkFeather = [[DecorativeItems alloc]init];
+        hawkFeather.itemName = @"Hawk Feather";
+        hawkFeather.cost = 50;
+        hawkFeather.isBeingUsed = NO;
+        hawkFeather.isBought = NO;
+        hawkFeather.isOnScreen = NO;
+        hawkFeather.associatedCat = @"45678";
+        hawkFeather.positionOfCat = @"rolling";
+        [[GameData sharedGameData].allItemsInGame setObject:hawkFeather forKey:@"Hawk Feather"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *bigStick = [[DecorativeItems alloc]init];
+        bigStick.itemName = @"Big Stick";
+        bigStick.cost = 30;
+        bigStick.isBeingUsed = NO;
+        bigStick.isBought = NO;
+        bigStick.isOnScreen = NO;
+        bigStick.associatedCat = @"45678";
+        bigStick.positionOfCat = @"rolling";
+        [[GameData sharedGameData].allItemsInGame setObject:bigStick forKey:@"Big Stick"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *flowers = [[DecorativeItems alloc]init];
+        flowers.itemName = @"Flowers";
+        flowers.cost = 70;
+        flowers.isBeingUsed = NO;
+        flowers.isBought = NO;
+        flowers.isOnScreen = NO;
+        flowers.associatedCat = @"45678";
+        flowers.positionOfCat = @"swatting";
+        [[GameData sharedGameData].allItemsInGame setObject:flowers forKey:@ "Flowers"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *hollowTrunk = [[DecorativeItems alloc]init];
+        hollowTrunk.itemName = @"Hollow Trunk";
+        hollowTrunk.cost = 150;
+        hollowTrunk.isBeingUsed = NO;
+        hollowTrunk.isBought = NO;
+        hollowTrunk.isOnScreen = NO;
+        hollowTrunk.associatedCat = @"45678";
+        hollowTrunk.positionOfCat = @"headHole";
+        [[GameData sharedGameData].allItemsInGame setObject:hollowTrunk forKey:@"Hollow Trunk"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *flatRock = [[DecorativeItems alloc]init];
+        flatRock.itemName = @"Small Flat Rock";
+        flatRock.cost = 110;
+        flatRock.isBeingUsed = NO;
+        flatRock.isBought = NO;
+        flatRock.isOnScreen = NO;
+        flatRock.associatedCat = @"45678";
+        flatRock.positionOfCat = @"laying";
+        flatRock.picture = @"flatRock.png";
+        [[GameData sharedGameData].allItemsInGame setObject:flatRock forKey:@"Small Flat Rock"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *sunningRocks = [[DecorativeItems alloc]init];
+        sunningRocks.itemName = @"Sunning Rocks";
+        sunningRocks.cost = 160;
+        sunningRocks.isBeingUsed = NO;
+        sunningRocks.isBought = NO;
+        sunningRocks.isOnScreen = NO;
+        sunningRocks.associatedCat = @"45678";
+        sunningRocks.positionOfCat = @"laying";
+        sunningRocks.picture = @"granite.png";
+        [[GameData sharedGameData].allItemsInGame setObject:sunningRocks forKey:@"Sunning Rocks"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *ribCage = [[DecorativeItems alloc]init];
+        ribCage.itemName = @"Rib Cage";
+        ribCage.cost = 320;
+        ribCage.isBeingUsed = NO;
+        ribCage.isBought = NO;
+        ribCage.isOnScreen = NO;
+        ribCage.associatedCat = @"45678";
+        ribCage.positionOfCat = @"laying";
+        [[GameData sharedGameData].allItemsInGame setObject:ribCage forKey:@"Rib Cage"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *mossyNest = [[DecorativeItems alloc]init];
+        mossyNest.itemName = @"Mossy Nest";
+        mossyNest.cost = 240;
+        mossyNest.isBeingUsed = NO;
+        mossyNest.isBought = NO;
+        mossyNest.isOnScreen = NO;
+        mossyNest.associatedCat = @"45678";
+        mossyNest.positionOfCat = @"sleeping";
+        [[GameData sharedGameData].allItemsInGame setObject:mossyNest forKey:@"Mossy Nest"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *ashTree = [[DecorativeItems alloc]init];
+        ashTree.itemName = @"Ash Tree";
+        ashTree.cost = 430;
+        ashTree.isBeingUsed = NO;
+        ashTree.isBought = NO;
+        ashTree.isOnScreen = NO;
+        ashTree.associatedCat = @"45678";
+        ashTree.positionOfCat = @"sitting";
+        [[GameData sharedGameData].allItemsInGame setObject:ashTree forKey:@"Ash Tree"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *femur = [[DecorativeItems alloc]init];
+        femur.itemName = @"Femur";
+        femur.cost = 280;
+        femur.isBeingUsed = NO;
+        femur.isBought = NO;
+        femur.isOnScreen = NO;
+        femur.associatedCat = @"45678";
+        femur.positionOfCat = @"rolling";
+        [[GameData sharedGameData].allItemsInGame setObject:femur forKey: @"Femur"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        DecorativeItems *scratchingBark = [[DecorativeItems alloc]init];
+        scratchingBark.itemName = @"Scratching Bark";
+        scratchingBark.cost = 220;
+        scratchingBark.isBeingUsed = NO;
+        scratchingBark.isBought = NO;
+        scratchingBark.isOnScreen = NO;
+        scratchingBark.associatedCat = @"45678";
+        scratchingBark.positionOfCat = @"laying";
+        [[GameData sharedGameData].allItemsInGame setObject:scratchingBark forKey:@"Scratching Bark"];
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        
+    }
+
     
-    
-    /*NSArray* allCatNamesPlease = [[GameData sharedGameData].allCatsInGame allKeys];
-    for (int tyu = 0; tyu < [allCatNamesPlease count]; tyu ++){
-        Cats *revisedCat = [[GameData sharedGameData].allCatsInGame objectForKey:allCatNamesPlease[tyu]];
-        revisedCat.associatedItem = @"123456";
-    }*/ // <---------- Comment in if you're getting this from github.
-    
-   /*[GameData sharedGameData].allItemsInGame = [[NSMutableDictionary alloc] init];
-    
-    
-    DecorativeItems *blackberryBush = [[DecorativeItems alloc]init];
-    blackberryBush.itemName = @"Blackberry Bush";
-    blackberryBush.cost = 60; 
-    blackberryBush.isBeingUsed = NO;
-    blackberryBush.isBought = NO;
-    blackberryBush.isOnScreen = NO;
-    blackberryBush.associatedCat = @"45678";
-    blackberryBush.positionOfCat = @"headLeaves";
-    [[GameData sharedGameData].allItemsInGame setObject:blackberryBush forKey:@"Blackberry Bush"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *pileLeaves = [[DecorativeItems alloc]init];
-    pileLeaves.itemName = @"Pile Of Leaves";
-    pileLeaves.cost = 40;
-    pileLeaves.isBeingUsed = NO;
-    pileLeaves.isBought = NO;
-    pileLeaves.isOnScreen = NO;
-    pileLeaves.associatedCat = @"45678";
-    pileLeaves.positionOfCat = @"headLeaves";
-    [[GameData sharedGameData].allItemsInGame setObject:pileLeaves forKey:@"Pile Of Leaves"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *birdSkull = [[DecorativeItems alloc]init];
-    birdSkull.itemName = @"Bird Skull";
-    birdSkull.cost = 250;
-    birdSkull.isBeingUsed = NO;
-    birdSkull.isBought = NO;
-    birdSkull.isOnScreen = NO;
-    birdSkull.associatedCat = @"45678";
-    birdSkull.positionOfCat = @"onHead";
-    [[GameData sharedGameData].allItemsInGame setObject:birdSkull forKey:@"Bird Skull"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *treeStump = [[DecorativeItems alloc]init];
-    treeStump.itemName = @"Tree Stump";
-    treeStump.cost = 120;
-    treeStump.isBeingUsed = NO;
-    treeStump.isBought = NO;
-    treeStump.isOnScreen = NO;
-    treeStump.associatedCat = @"45678";
-    treeStump.positionOfCat = @"laying";
-    [[GameData sharedGameData].allItemsInGame setObject:treeStump forKey:@"Tree Stump"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *ballMoss = [[DecorativeItems alloc]init];
-    ballMoss.itemName = @"Ball of Moss";
-    ballMoss.cost = 80;
-    ballMoss.isBeingUsed = NO;
-    ballMoss.isBought = NO;
-    ballMoss.isOnScreen = NO;
-    ballMoss.associatedCat = @"45678";
-    ballMoss.positionOfCat = @"swatting";
-    [[GameData sharedGameData].allItemsInGame setObject:ballMoss forKey:@"Ball of Moss"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *hawkFeather = [[DecorativeItems alloc]init];
-    hawkFeather.itemName = @"Hawk Feather";
-    hawkFeather.cost = 50;
-    hawkFeather.isBeingUsed = NO;
-    hawkFeather.isBought = NO;
-    hawkFeather.isOnScreen = NO;
-    hawkFeather.associatedCat = @"45678";
-    hawkFeather.positionOfCat = @"rolling";
-    [[GameData sharedGameData].allItemsInGame setObject:hawkFeather forKey:@"Hawk Feather"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *bigStick = [[DecorativeItems alloc]init];
-    bigStick.itemName = @"Big Stick";
-    bigStick.cost = 30;
-    bigStick.isBeingUsed = NO;
-    bigStick.isBought = NO;
-    bigStick.isOnScreen = NO;
-    bigStick.associatedCat = @"45678";
-    bigStick.positionOfCat = @"rolling";
-    [[GameData sharedGameData].allItemsInGame setObject:bigStick forKey:@"Big Stick"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *flowers = [[DecorativeItems alloc]init];
-    flowers.itemName = @"Flowers";
-    flowers.cost = 70;
-    flowers.isBeingUsed = NO;
-    flowers.isBought = NO;
-    flowers.isOnScreen = NO;
-    flowers.associatedCat = @"45678";
-    flowers.positionOfCat = @"swatting";
-    [[GameData sharedGameData].allItemsInGame setObject:flowers forKey:@ "Flowers"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *hollowTrunk = [[DecorativeItems alloc]init];
-    hollowTrunk.itemName = @"Hollow Trunk";
-    hollowTrunk.cost = 150;
-    hollowTrunk.isBeingUsed = NO;
-    hollowTrunk.isBought = NO;
-    hollowTrunk.isOnScreen = NO;
-    hollowTrunk.associatedCat = @"45678";
-    hollowTrunk.positionOfCat = @"headHole";
-    [[GameData sharedGameData].allItemsInGame setObject:hollowTrunk forKey:@"Hollow Trunk"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *flatRock = [[DecorativeItems alloc]init];
-    flatRock.itemName = @"Small Flat Rock";
-    flatRock.cost = 110;
-    flatRock.isBeingUsed = NO;
-    flatRock.isBought = NO;
-    flatRock.isOnScreen = NO;
-    flatRock.associatedCat = @"45678";
-    flatRock.positionOfCat = @"laying";
-    [[GameData sharedGameData].allItemsInGame setObject:flatRock forKey:@"Small Flat Rock"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *sunningRocks = [[DecorativeItems alloc]init];
-    sunningRocks.itemName = @"Sunning Rocks";
-    sunningRocks.cost = 160;
-    sunningRocks.isBeingUsed = NO;
-    sunningRocks.isBought = NO;
-    sunningRocks.isOnScreen = NO;
-    sunningRocks.associatedCat = @"45678";
-    sunningRocks.positionOfCat = @"laying";
-    [[GameData sharedGameData].allItemsInGame setObject:sunningRocks forKey:@"Sunning Rocks"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *ribCage = [[DecorativeItems alloc]init];
-    ribCage.itemName = @"Rib Cage";
-    ribCage.cost = 320;
-    ribCage.isBeingUsed = NO;
-    ribCage.isBought = NO;
-    ribCage.isOnScreen = NO;
-    ribCage.associatedCat = @"45678";
-    ribCage.positionOfCat = @"laying";
-    [[GameData sharedGameData].allItemsInGame setObject:ribCage forKey:@"Rib Cage"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *mossyNest = [[DecorativeItems alloc]init];
-    mossyNest.itemName = @"Mossy Nest";
-    mossyNest.cost = 240;
-    mossyNest.isBeingUsed = NO;
-    mossyNest.isBought = NO;
-    mossyNest.isOnScreen = NO;
-    mossyNest.associatedCat = @"45678";
-    mossyNest.positionOfCat = @"sleeping";
-    [[GameData sharedGameData].allItemsInGame setObject:mossyNest forKey:@"Mossy Nest"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *ashTree = [[DecorativeItems alloc]init];
-    ashTree.itemName = @"Ash Tree";
-    ashTree.cost = 430;
-    ashTree.isBeingUsed = NO;
-    ashTree.isBought = NO;
-    ashTree.isOnScreen = NO;
-    ashTree.associatedCat = @"45678";
-    ashTree.positionOfCat = @"sitting";
-    [[GameData sharedGameData].allItemsInGame setObject:ashTree forKey:@"Ash Tree"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *femur = [[DecorativeItems alloc]init];
-    femur.itemName = @"Femur";
-    femur.cost = 280;
-    femur.isBeingUsed = NO;
-    femur.isBought = NO;
-    femur.isOnScreen = NO;
-    femur.associatedCat = @"45678";
-    femur.positionOfCat = @"rolling";
-    [[GameData sharedGameData].allItemsInGame setObject:femur forKey: @"Femur"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    DecorativeItems *scratchingBark = [[DecorativeItems alloc]init];
-    scratchingBark.itemName = @"Scratching Bark";
-    scratchingBark.cost = 220;
-    scratchingBark.isBeingUsed = NO;
-    scratchingBark.isBought = NO;
-    scratchingBark.isOnScreen = NO;
-    scratchingBark.associatedCat = @"45678";
-    scratchingBark.positionOfCat = @"laying";
-    [[GameData sharedGameData].allItemsInGame setObject:scratchingBark forKey:@"Scratching Bark"];
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    */
-    
+
     /*DecorativeItems *BlackberryBush = [[GameData sharedGameData].allItemsInGame objectForKey:@"Blackberry Bush"];
     BlackberryBush.isBought = YES;
     
@@ -449,10 +473,20 @@
     flatRock.isBought = YES;
     
     DecorativeItems *treeStump= [[GameData sharedGameData].allItemsInGame objectForKey:@"Tree Stump"];
-    treeStump.isBought = YES;*/
+    treeStump.isBought = YES;
     
-    DecorativeItems *sunningRocks= [[GameData sharedGameData].allItemsInGame objectForKey:@"Sunning Rocks"];
-    sunningRocks.isBought = YES;
+    DecorativeItems *sunningRocks5= [[GameData sharedGameData].allItemsInGame objectForKey:@"Sunning Rocks"];
+    sunningRocks5.isBought = YES;*/
+    
+    
+    // THESE TWO ITEMS WILL BE GIVEN TO THE PLAYER AT THE START. THE PLAYER WILL START WITH A 100 PREY POINTS
+    DecorativeItems *BlackberryBush = [[GameData sharedGameData].allItemsInGame objectForKey:@"Blackberry Bush"];
+    BlackberryBush.isBought = YES;
+    
+    DecorativeItems *flatRock = [[GameData sharedGameData].allItemsInGame objectForKey:@"Small Flat Rock"];
+    flatRock.isBought = YES;
+    
+    
 
 
     
@@ -470,8 +504,17 @@
     highScore1 = [GameData sharedGameData].highScore;
     NSArray *posArray1 = @[@150, @150];
     //[[GameData sharedGameData].CatsAndPosOnScreen removeAllObjects];
-    //[GameData sharedGameData].CatsAndPosOnScreen = [[NSMutableDictionary alloc]init]; // recomment in
-    //[GameData sharedGameData].ItemsAndPosOnScreen = [[NSMutableDictionary alloc]init];  <---- recomment in
+    
+    if (!([GameData sharedGameData].CatsAndPosOnScreen)){
+        [GameData sharedGameData].CatsAndPosOnScreen = [[NSMutableDictionary alloc]init]; // recomment in
+    }
+    
+    if (!([GameData sharedGameData].ItemsAndPosOnScreen)){
+        [GameData sharedGameData].ItemsAndPosOnScreen = [[NSMutableDictionary alloc]init]; // <---- recomment in
+
+    }
+
+
     
     
     
@@ -491,47 +534,75 @@
     //[[GameData sharedGameData].ItemsAndPosOnScreen setObject:@1  forKey:@"Blackberry Bush"];
     //[[GameData sharedGameData].CatsAndPosOnScreen setObject:@1  forKey:@"Lizard"];
     
-    DecorativeItems *blackBush = [[GameData sharedGameData].allItemsInGame objectForKey:@"Blackberry Bush"];
-    blackBush.itemPosition = @1;
-    blackBush.associatedCat = @"Lizard";
-    [[GameData sharedGameData].ItemsAndPosOnScreen setObject:blackBush.itemPosition  forKey:@"Blackberry Bush"];
+    
+    
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+   /* DecorativeItems *blackBush = [[GameData sharedGameData].allItemsInGame objectForKey:@"Blackberry Bush"];
+    blackBush.itemPosition = nil;
+    blackBush.associatedCat = @"45678";
+    blackBush.isBeingUsed = NO;
+    blackBush.isOnScreen = NO;
+    //[[GameData sharedGameData].ItemsAndPosOnScreen setObject:blackBush.itemPosition  forKey:@"Blackberry Bush"];
     Cats *lizard1  = [[GameData sharedGameData].allCatsInGame objectForKey:@"Lizard"];
-    lizard1.associatedItem = @"Blackberry Bush";
-    [[GameData sharedGameData].CatsAndPosOnScreen setObject:@1 forKey:@"Lizard"];
+    lizard1.associatedItem = @"123456";
+    //[[GameData sharedGameData].CatsAndPosOnScreen setObject:@1 forKey:@"Lizard"];*/
     
     
-    DecorativeItems *birdSkull = [[GameData sharedGameData].allItemsInGame objectForKey:@"Bird Skull"];
-    birdSkull.itemPosition = @2;
-    birdSkull.associatedCat = @"Maple";
-    [[GameData sharedGameData].ItemsAndPosOnScreen setObject:birdSkull.itemPosition  forKey:@"Bird Skull"];
+    /*
+     DecorativeItems *birdSkull4 = [[GameData sharedGameData].allItemsInGame objectForKey:@"Bird Skull"];
+     birdSkull4.itemPosition = @2;
+     birdSkull4.associatedCat = @"Maple";
+     [[GameData sharedGameData].ItemsAndPosOnScreen setObject:birdSkull4.itemPosition  forKey:@"Bird Skull"];
+     Cats * maple1 = [[GameData sharedGameData].allCatsInGame objectForKey:@"Maple"];
+     maple1.associatedItem = @"Bird Skull";
+     [[GameData sharedGameData].CatsAndPosOnScreen setObject:@2 forKey:@"Maple"];
+     
+     */
+    
+    /*DecorativeItems *birdSkull4 = [[GameData sharedGameData].allItemsInGame objectForKey:@"Bird Skull"];
+    birdSkull4.itemPosition = nil;
+    birdSkull4.associatedCat = @"45678";
+    birdSkull4.isBeingUsed = NO;
+    birdSkull4.isOnScreen = NO;
+    //[[GameData sharedGameData].ItemsAndPosOnScreen setObject:birdSkull4.itemPosition  forKey:@"Bird Skull"];
     Cats * maple1 = [[GameData sharedGameData].allCatsInGame objectForKey:@"Maple"];
-    maple1.associatedItem = @"Bird Skull";
-    [[GameData sharedGameData].CatsAndPosOnScreen setObject:@2 forKey:@"Maple"];
+    maple1.associatedItem = @"123456";
+    //[[GameData sharedGameData].CatsAndPosOnScreen setObject:@2 forKey:@"Maple"];*/
     
     
-   DecorativeItems *treeStump = [[GameData sharedGameData].allItemsInGame objectForKey:@"Tree Stump"];
-    treeStump.itemPosition = @3;
-    treeStump.associatedCat = @"Sparrow";
-    [[GameData sharedGameData].ItemsAndPosOnScreen setObject:treeStump.itemPosition  forKey:@"Tree Stump"];
+   /*DecorativeItems *treeStump3 = [[GameData sharedGameData].allItemsInGame objectForKey:@"Tree Stump"];
+    treeStump3.itemPosition = nil;
+    treeStump3.associatedCat = @"45678";
+    treeStump3.isBeingUsed = NO;
+    treeStump3.isOnScreen = NO;
+    //[[GameData sharedGameData].ItemsAndPosOnScreen setObject:treeStump3.itemPosition  forKey:@"Tree Stump"];
     Cats *sparrow1  = [[GameData sharedGameData].allCatsInGame objectForKey:@"Sparrow"];
-    sparrow1.associatedItem = @"Tree Stump";
-    [[GameData sharedGameData].CatsAndPosOnScreen setObject:@3 forKey:@"Sparrow"];
+    sparrow1.associatedItem = @"123456";
+    //[[GameData sharedGameData].CatsAndPosOnScreen setObject:@3 forKey:@"Sparrow"];
     
     
-    DecorativeItems *flatRock = [[GameData sharedGameData].allItemsInGame objectForKey:@"Small Flat Rock"];
-    flatRock.itemPosition = @4;
-    flatRock.associatedCat = @"Cinder"; 
-    [[GameData sharedGameData].ItemsAndPosOnScreen setObject:flatRock.itemPosition  forKey:@"Small Flat Rock"];
+    DecorativeItems *flatRock2 = [[GameData sharedGameData].allItemsInGame objectForKey:@"Small Flat Rock"];
+    flatRock2.itemPosition = nil;
+    flatRock2.associatedCat = @"45678";
+    flatRock2.isOnScreen = NO;
+    flatRock2.isBeingUsed = NO;
+    //[[GameData sharedGameData].ItemsAndPosOnScreen setObject:flatRock2.itemPosition  forKey:@"Small Flat Rock"];
     Cats *cinder1  = [[GameData sharedGameData].allCatsInGame objectForKey:@"Cinder"];
-    cinder1.associatedItem = @"Small Flat Rock";
-    [[GameData sharedGameData].CatsAndPosOnScreen setObject:@4 forKey:@"Cinder"];
+    cinder1.associatedItem = @"123456";
+    //[[GameData sharedGameData].CatsAndPosOnScreen setObject:@4 forKey:@"Cinder"];
+    
+    
+    [[GameData sharedGameData].CatsAndPosOnScreen removeAllObjects];
+    [[GameData sharedGameData].ItemsAndPosOnScreen removeAllObjects];*/
     
 
 
-
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     
+    // VV May Have To Remove The Next Two Things.
     currCatsAndPosOnScreen = [NSMutableDictionary dictionaryWithDictionary:[GameData sharedGameData].CatsAndPosOnScreen];
     
     currItemsAndPosOnScreen = [NSMutableDictionary dictionaryWithDictionary:[GameData sharedGameData].ItemsAndPosOnScreen];
@@ -591,7 +662,9 @@
                 deletedCat.onScreen = false;
                 NSString *associatedItemName = deletedCat.associatedItem;
                 DecorativeItems *itemFreedUp = [[GameData sharedGameData].allItemsInGame objectForKey:associatedItemName];
+                itemFreedUp.associatedCat = @"45678"; 
                 itemFreedUp.isBeingUsed = NO;
+                itemFreedUp.isOnScreen  = YES; 
                 deletedCat.associatedItem = @"123456";
                 int addedPreyPoints = arc4random_uniform(deletedCat.currLoyaltyCounter + 1);
                 [GameData sharedGameData].preyPoints += addedPreyPoints;
